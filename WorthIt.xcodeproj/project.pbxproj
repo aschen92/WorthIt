@@ -13,14 +13,25 @@
 		C69FD1C5188ED88800150019 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C69FD1C3188ED88800150019 /* InfoPlist.strings */; };
 		C69FD1C7188ED88800150019 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C69FD1C6188ED88800150019 /* main.m */; };
 		C69FD1CB188ED88900150019 /* WorthItAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C69FD1CA188ED88900150019 /* WorthItAppDelegate.m */; };
-		C69FD1CE188ED88900150019 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C69FD1CC188ED88900150019 /* Main.storyboard */; };
-		C69FD1D1188ED88900150019 /* WorthItViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C69FD1D0188ED88900150019 /* WorthItViewController.m */; };
 		C69FD1D3188ED88900150019 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C69FD1D2188ED88900150019 /* Images.xcassets */; };
 		C69FD1DA188ED88B00150019 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C69FD1D9188ED88B00150019 /* XCTest.framework */; };
 		C69FD1DB188ED88B00150019 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C69FD1BA188ED88800150019 /* Foundation.framework */; };
 		C69FD1DC188ED88B00150019 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C69FD1BE188ED88800150019 /* UIKit.framework */; };
 		C69FD1E4188ED88B00150019 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C69FD1E2188ED88B00150019 /* InfoPlist.strings */; };
 		C69FD1E6188ED88B00150019 /* WorthItTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C69FD1E5188ED88B00150019 /* WorthItTests.m */; };
+		C69FD1FB188ED9B100150019 /* StoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C69FD1F9188ED9B100150019 /* StoriesViewController.m */; };
+		C69FD1FC188ED9B100150019 /* StoriesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C69FD1FA188ED9B100150019 /* StoriesViewController.xib */; };
+		C69FD200188EDE1900150019 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C69FD1FE188EDE1900150019 /* HomeViewController.m */; };
+		C69FD201188EDE1900150019 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C69FD1FF188EDE1900150019 /* HomeViewController.xib */; };
+		C69FD203188EE0C200150019 /* Time@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C69FD202188EE0C200150019 /* Time@2x.png */; };
+		C69FD205188EE0D100150019 /* Hypno@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C69FD204188EE0D100150019 /* Hypno@2x.png */; };
+		C69FD207188EE2DC00150019 /* Home@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C69FD206188EE2DC00150019 /* Home@2x.png */; };
+		C69FD20B188EE33D00150019 /* LocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C69FD209188EE33D00150019 /* LocationViewController.m */; };
+		C69FD20C188EE33D00150019 /* LocationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C69FD20A188EE33D00150019 /* LocationViewController.xib */; };
+		C69FD20E188EE40100150019 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C69FD20D188EE40100150019 /* CoreLocation.framework */; };
+		C69FD210188EE44700150019 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C69FD20F188EE44700150019 /* MapKit.framework */; };
+		C69FD214188EE73400150019 /* StoryDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C69FD212188EE73400150019 /* StoryDetailViewController.m */; };
+		C69FD215188EE73400150019 /* StoryDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C69FD213188EE73400150019 /* StoryDetailViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,15 +55,29 @@
 		C69FD1C8188ED88900150019 /* WorthIt-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WorthIt-Prefix.pch"; sourceTree = "<group>"; };
 		C69FD1C9188ED88900150019 /* WorthItAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WorthItAppDelegate.h; sourceTree = "<group>"; };
 		C69FD1CA188ED88900150019 /* WorthItAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WorthItAppDelegate.m; sourceTree = "<group>"; };
-		C69FD1CD188ED88900150019 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		C69FD1CF188ED88900150019 /* WorthItViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WorthItViewController.h; sourceTree = "<group>"; };
-		C69FD1D0188ED88900150019 /* WorthItViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WorthItViewController.m; sourceTree = "<group>"; };
 		C69FD1D2188ED88900150019 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C69FD1D8188ED88B00150019 /* WorthItTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WorthItTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C69FD1D9188ED88B00150019 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		C69FD1E1188ED88B00150019 /* WorthItTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WorthItTests-Info.plist"; sourceTree = "<group>"; };
 		C69FD1E3188ED88B00150019 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C69FD1E5188ED88B00150019 /* WorthItTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WorthItTests.m; sourceTree = "<group>"; };
+		C69FD1F8188ED9B100150019 /* StoriesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StoriesViewController.h; path = ../StoriesViewController.h; sourceTree = "<group>"; };
+		C69FD1F9188ED9B100150019 /* StoriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StoriesViewController.m; path = ../StoriesViewController.m; sourceTree = "<group>"; };
+		C69FD1FA188ED9B100150019 /* StoriesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = StoriesViewController.xib; path = ../StoriesViewController.xib; sourceTree = "<group>"; };
+		C69FD1FD188EDE1900150019 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HomeViewController.h; path = ../HomeViewController.h; sourceTree = "<group>"; };
+		C69FD1FE188EDE1900150019 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomeViewController.m; path = ../HomeViewController.m; sourceTree = "<group>"; };
+		C69FD1FF188EDE1900150019 /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HomeViewController.xib; path = ../HomeViewController.xib; sourceTree = "<group>"; };
+		C69FD202188EE0C200150019 /* Time@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Time@2x.png"; sourceTree = "<group>"; };
+		C69FD204188EE0D100150019 /* Hypno@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Hypno@2x.png"; sourceTree = "<group>"; };
+		C69FD206188EE2DC00150019 /* Home@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Home@2x.png"; path = "../Home@2x.png"; sourceTree = "<group>"; };
+		C69FD208188EE33D00150019 /* LocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LocationViewController.h; path = ../LocationViewController.h; sourceTree = "<group>"; };
+		C69FD209188EE33D00150019 /* LocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LocationViewController.m; path = ../LocationViewController.m; sourceTree = "<group>"; };
+		C69FD20A188EE33D00150019 /* LocationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LocationViewController.xib; path = ../LocationViewController.xib; sourceTree = "<group>"; };
+		C69FD20D188EE40100150019 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		C69FD20F188EE44700150019 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		C69FD211188EE73400150019 /* StoryDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StoryDetailViewController.h; path = ../StoryDetailViewController.h; sourceTree = "<group>"; };
+		C69FD212188EE73400150019 /* StoryDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StoryDetailViewController.m; path = ../StoryDetailViewController.m; sourceTree = "<group>"; };
+		C69FD213188EE73400150019 /* StoryDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = StoryDetailViewController.xib; path = ../StoryDetailViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +85,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C69FD210188EE44700150019 /* MapKit.framework in Frameworks */,
+				C69FD20E188EE40100150019 /* CoreLocation.framework in Frameworks */,
 				C69FD1BD188ED88800150019 /* CoreGraphics.framework in Frameworks */,
 				C69FD1BF188ED88800150019 /* UIKit.framework in Frameworks */,
 				C69FD1BB188ED88800150019 /* Foundation.framework in Frameworks */,
@@ -101,6 +128,8 @@
 		C69FD1B9188ED88800150019 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C69FD20F188EE44700150019 /* MapKit.framework */,
+				C69FD20D188EE40100150019 /* CoreLocation.framework */,
 				C69FD1BA188ED88800150019 /* Foundation.framework */,
 				C69FD1BC188ED88800150019 /* CoreGraphics.framework */,
 				C69FD1BE188ED88800150019 /* UIKit.framework */,
@@ -114,9 +143,9 @@
 			children = (
 				C69FD1C9188ED88900150019 /* WorthItAppDelegate.h */,
 				C69FD1CA188ED88900150019 /* WorthItAppDelegate.m */,
-				C69FD1CC188ED88900150019 /* Main.storyboard */,
-				C69FD1CF188ED88900150019 /* WorthItViewController.h */,
-				C69FD1D0188ED88900150019 /* WorthItViewController.m */,
+				C69FD1F5188ED92400150019 /* Views */,
+				C69FD1F7188ED93800150019 /* Models */,
+				C69FD1F4188ED91A00150019 /* Controllers */,
 				C69FD1D2188ED88900150019 /* Images.xcassets */,
 				C69FD1C1188ED88800150019 /* Supporting Files */,
 			);
@@ -126,6 +155,9 @@
 		C69FD1C1188ED88800150019 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C69FD206188EE2DC00150019 /* Home@2x.png */,
+				C69FD204188EE0D100150019 /* Hypno@2x.png */,
+				C69FD202188EE0C200150019 /* Time@2x.png */,
 				C69FD1C2188ED88800150019 /* WorthIt-Info.plist */,
 				C69FD1C3188ED88800150019 /* InfoPlist.strings */,
 				C69FD1C6188ED88800150019 /* main.m */,
@@ -150,6 +182,39 @@
 				C69FD1E2188ED88B00150019 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C69FD1F4188ED91A00150019 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C69FD211188EE73400150019 /* StoryDetailViewController.h */,
+				C69FD212188EE73400150019 /* StoryDetailViewController.m */,
+				C69FD1FD188EDE1900150019 /* HomeViewController.h */,
+				C69FD1FE188EDE1900150019 /* HomeViewController.m */,
+				C69FD1F8188ED9B100150019 /* StoriesViewController.h */,
+				C69FD1F9188ED9B100150019 /* StoriesViewController.m */,
+				C69FD208188EE33D00150019 /* LocationViewController.h */,
+				C69FD209188EE33D00150019 /* LocationViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		C69FD1F5188ED92400150019 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C69FD1FF188EDE1900150019 /* HomeViewController.xib */,
+				C69FD1FA188ED9B100150019 /* StoriesViewController.xib */,
+				C69FD20A188EE33D00150019 /* LocationViewController.xib */,
+				C69FD213188EE73400150019 /* StoryDetailViewController.xib */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		C69FD1F7188ED93800150019 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -229,9 +294,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C69FD207188EE2DC00150019 /* Home@2x.png in Resources */,
 				C69FD1D3188ED88900150019 /* Images.xcassets in Resources */,
+				C69FD1FC188ED9B100150019 /* StoriesViewController.xib in Resources */,
+				C69FD20C188EE33D00150019 /* LocationViewController.xib in Resources */,
 				C69FD1C5188ED88800150019 /* InfoPlist.strings in Resources */,
-				C69FD1CE188ED88900150019 /* Main.storyboard in Resources */,
+				C69FD205188EE0D100150019 /* Hypno@2x.png in Resources */,
+				C69FD201188EDE1900150019 /* HomeViewController.xib in Resources */,
+				C69FD215188EE73400150019 /* StoryDetailViewController.xib in Resources */,
+				C69FD203188EE0C200150019 /* Time@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,9 +321,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C69FD1D1188ED88900150019 /* WorthItViewController.m in Sources */,
 				C69FD1CB188ED88900150019 /* WorthItAppDelegate.m in Sources */,
+				C69FD214188EE73400150019 /* StoryDetailViewController.m in Sources */,
+				C69FD1FB188ED9B100150019 /* StoriesViewController.m in Sources */,
 				C69FD1C7188ED88800150019 /* main.m in Sources */,
+				C69FD200188EDE1900150019 /* HomeViewController.m in Sources */,
+				C69FD20B188EE33D00150019 /* LocationViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,14 +355,6 @@
 				C69FD1C4188ED88800150019 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		C69FD1CC188ED88900150019 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C69FD1CD188ED88900150019 /* Base */,
-			);
-			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 		C69FD1E2188ED88B00150019 /* InfoPlist.strings */ = {

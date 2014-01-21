@@ -1,5 +1,5 @@
 //
-//  WorthItViewController.h
+//  HomeViewController.h
 //  WorthIt
 //
 //  Created by Aaron Schendel on 1/21/14.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WorthItViewController : UIViewController
+@interface HomeViewController : UIViewController
 
 @end

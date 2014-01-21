@@ -7,12 +7,29 @@
 //
 
 #import "WorthItAppDelegate.h"
+#import "StoriesViewController.h"
+#import "HomeViewController.h"
+#import "LocationViewController.h"
 
 @implementation WorthItAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
+    
+    StoriesViewController *svc = [[StoriesViewController alloc] init];
+    HomeViewController *hvc = [[HomeViewController alloc] init];
+    LocationViewController *lvc = [[LocationViewController alloc] init];
+    
+    UITabBarController *tabBarController = [[UITabBarController alloc] init];
+    NSArray *viewControllers = [NSArray arrayWithObjects:hvc, svc, lvc, nil];
+    [tabBarController setViewControllers:viewControllers];
+    [[self window] setRootViewController:tabBarController];
+    
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 							
