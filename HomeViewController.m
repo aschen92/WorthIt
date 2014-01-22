@@ -28,6 +28,13 @@
     return self;
 }
 
+- (void)watchVideo:(id)sender
+{
+    NSURL *url = [ [ NSURL alloc ] initWithString: @"http://www.youtube.com" ];
+    [[UIApplication sharedApplication] openURL:url];
+
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -39,5 +46,6 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 @end

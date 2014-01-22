@@ -7,12 +7,15 @@
 //
 
 #import "StoriesViewController.h"
+#import "StoryCell.h"
 
 @interface StoriesViewController ()
 
 @end
 
 @implementation StoriesViewController
+
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -31,8 +34,7 @@
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    //customization
 }
 
 - (void)didReceiveMemoryWarning
@@ -40,5 +42,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
 
 @end

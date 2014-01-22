@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		93AD1D8D188F7A71001C5236 /* logoblack.png in Resources */ = {isa = PBXBuildFile; fileRef = 93AD1D8C188F7A71001C5236 /* logoblack.png */; };
+		C60BE6C1188FA08300C67BA1 /* StoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C60BE6C0188FA08300C67BA1 /* StoryCell.m */; };
+		C60BE6C3188FA09D00C67BA1 /* StoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C60BE6C2188FA09D00C67BA1 /* StoryCell.xib */; };
+		C60BE6C5188FA17E00C67BA1 /* 942733_669092529786044_801316760_n.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C60BE6C4188FA17E00C67BA1 /* 942733_669092529786044_801316760_n.jpg */; };
 		C69FD1BB188ED88800150019 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C69FD1BA188ED88800150019 /* Foundation.framework */; };
 		C69FD1BD188ED88800150019 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C69FD1BC188ED88800150019 /* CoreGraphics.framework */; };
 		C69FD1BF188ED88800150019 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C69FD1BE188ED88800150019 /* UIKit.framework */; };
@@ -47,6 +50,11 @@
 
 /* Begin PBXFileReference section */
 		93AD1D8C188F7A71001C5236 /* logoblack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logoblack.png; sourceTree = "<group>"; };
+		C60BE6BF188FA08300C67BA1 /* StoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoryCell.h; sourceTree = "<group>"; };
+		C60BE6C0188FA08300C67BA1 /* StoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoryCell.m; sourceTree = "<group>"; };
+		C60BE6C2188FA09D00C67BA1 /* StoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StoryCell.xib; sourceTree = "<group>"; };
+		C60BE6C4188FA17E00C67BA1 /* 942733_669092529786044_801316760_n.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 942733_669092529786044_801316760_n.jpg; sourceTree = "<group>"; };
+		C60BE6C6188FA8F400C67BA1 /* PREVIEW WorthItCommercial.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PREVIEW WorthItCommercial.mp4"; sourceTree = "<group>"; };
 		C69FD1B7188ED88800150019 /* WorthIt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorthIt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C69FD1BA188ED88800150019 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C69FD1BC188ED88800150019 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -157,6 +165,8 @@
 		C69FD1C1188ED88800150019 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C60BE6C6188FA8F400C67BA1 /* PREVIEW WorthItCommercial.mp4 */,
+				C60BE6C4188FA17E00C67BA1 /* 942733_669092529786044_801316760_n.jpg */,
 				93AD1D8C188F7A71001C5236 /* logoblack.png */,
 				C69FD206188EE2DC00150019 /* Home@2x.png */,
 				C69FD204188EE0D100150019 /* Hypno@2x.png */,
@@ -209,6 +219,9 @@
 				C69FD1FA188ED9B100150019 /* StoriesViewController.xib */,
 				C69FD20A188EE33D00150019 /* LocationViewController.xib */,
 				C69FD213188EE73400150019 /* StoryDetailViewController.xib */,
+				C60BE6C2188FA09D00C67BA1 /* StoryCell.xib */,
+				C60BE6BF188FA08300C67BA1 /* StoryCell.h */,
+				C60BE6C0188FA08300C67BA1 /* StoryCell.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -309,7 +322,9 @@
 				C69FD205188EE0D100150019 /* Hypno@2x.png in Resources */,
 				C69FD201188EDE1900150019 /* HomeViewController.xib in Resources */,
 				C69FD215188EE73400150019 /* StoryDetailViewController.xib in Resources */,
+				C60BE6C5188FA17E00C67BA1 /* 942733_669092529786044_801316760_n.jpg in Resources */,
 				C69FD203188EE0C200150019 /* Time@2x.png in Resources */,
+				C60BE6C3188FA09D00C67BA1 /* StoryCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,6 +349,7 @@
 				C69FD1C7188ED88800150019 /* main.m in Sources */,
 				C69FD200188EDE1900150019 /* HomeViewController.m in Sources */,
 				C69FD20B188EE33D00150019 /* LocationViewController.m in Sources */,
+				C60BE6C1188FA08300C67BA1 /* StoryCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

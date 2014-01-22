@@ -10,4 +10,6 @@
 
 @interface HomeViewController : UIViewController
 
+- (IBAction)watchVideo:(id)sender;
+
 @end
