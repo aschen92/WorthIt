@@ -9,6 +9,11 @@
 #import <UIKit/UIKit.h>
 
 @interface StoryCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *storySubject;
+@property (weak, nonatomic) IBOutlet UILabel *dateLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *profilePicture;
+
+
 
 @property (weak, nonatomic) id controller;
 @property (weak, nonatomic) UITableView *tableView;

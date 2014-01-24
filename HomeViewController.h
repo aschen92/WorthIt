@@ -11,5 +11,6 @@
 @interface HomeViewController : UIViewController
 
 - (IBAction)watchVideo:(id)sender;
+- (IBAction)showStories:(id)sender;
 
 @end

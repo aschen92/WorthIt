@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface StoriesViewController : UIViewController
+@interface StoriesViewController : UITableViewController
+
+-(IBAction)addNewItem:(id)sender;
 
 @end

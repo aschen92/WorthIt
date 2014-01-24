@@ -7,6 +7,7 @@
 //
 
 #import "HomeViewController.h"
+#import "StoriesViewController.h"
 
 @interface HomeViewController ()
 
@@ -19,10 +20,7 @@
     NSBundle *appBundle = [NSBundle mainBundle];
     self = [super initWithNibName:@"HomeViewController" bundle:appBundle];
     if (self) {
-        UITabBarItem *tbi = [self tabBarItem];
-        [tbi setTitle:@"Home"];
-        UIImage *i = [UIImage imageNamed:@"Home.png"];
-        [tbi setImage:i];
+        
         
     }
     return self;
@@ -33,6 +31,12 @@
     NSURL *url = [ [ NSURL alloc ] initWithString: @"http://www.youtube.com" ];
     [[UIApplication sharedApplication] openURL:url];
 
+}
+
+- (IBAction)showStories:(id)sender
+{
+    StoriesViewController *svc = [[StoriesViewController alloc] init];
+    [self presentViewController:svc animated:YES completion:nil];
 }
 
 - (void)viewDidLoad
