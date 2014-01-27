@@ -9,6 +9,8 @@
 #import "StoriesViewController.h"
 #import "StoryCell.h"
 #import "StoryDetailViewController.h"
+#import "StoryStore.h"
+#import "Story.h"
 
 @interface StoriesViewController ()
 
@@ -18,14 +20,18 @@
 
 - (void)addNewItem:(id)sender
 {
-    BNRItem *newItem = [[BNRItemStore sharedStore] createItem];
-    StoryDetailViewController *storyDetailViewController = [[StoryDetailViewController alloc] initForNewItem:YES];
-    [storyDetailViewController setItem:newItem];
     
-    [StoryDetailViewController setDismissBlock:^{
+    // THIS IS THE NEXT THING TO WORK ON
+    StoryStore *sharedStore = [[StoryStore alloc] init];
+    Story *story1 = [[Story alloc] init];
+    [sharedStore addItem:story1];
+    
+    StoryDetailViewController *storyDetailViewController = [[StoryDetailViewController alloc] initWithNewStory:YES];
+    [storyDetailViewController setStory:story1];
+    [storyDetailViewController setDismissBlock:^{
         [[self tableView] reloadData];
     }];
-    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:detailViewController];
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:storyDetailViewController];
     
     [navController setModalPresentationStyle:UIModalPresentationFormSheet];
     [self presentViewController:navController animated:YES completion:nil];
@@ -63,9 +69,23 @@
     return self;
 }
 
+- (id)initWithStyle:(UITableViewStyle)style
+{
+    return [self init];
+}
+
 - (void)viewDidLoad
 {
-    //customization
+    [super viewDidLoad];
+    
+    UINib *nib = [UINib nibWithNibName:@"StoryCell" bundle:nil];
+    [[self tableView] registerNib:nib forCellReuseIdentifier:@"StoryCell"];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [[self tableView] reloadData];
 }
 
 
@@ -74,6 +94,28 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (NSInteger)tableView:(UITableView *)tableView
+ numberOfRowsInSection:(NSInteger)section
+{
+    return [[[StoryStore sharedStore] allItems] count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    Story *s = [[[StoryStore sharedStore] allItems] objectAtIndex:[indexPath row]];
+    StoryCell *cell = [tableView dequeueReusableCellWithIdentifier:@"StoryCell"];
+    
+    [cell setController:self];
+    [cell setTableView:tableView];
+    
+    [[cell storySubject] setText:[s subject]];
+    
+    //change to an NSDate
+    [[cell dateLabel] setText:[s datePosted]];
+    return cell;
 }
 
 

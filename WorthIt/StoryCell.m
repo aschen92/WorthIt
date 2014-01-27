@@ -11,4 +11,6 @@
 @implementation StoryCell
 @synthesize controller, tableView;
 
+
+
 @end

@@ -6,6 +6,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StoryDetailViewController">
             <connections>
+                <outlet property="story" destination="fYB-R5-F9J" id="ETK-IV-pF5"/>
+                <outlet property="storySubject" destination="Lyr-ZQ-WAI" id="iGI-b4-YXi"/>
+                <outlet property="storyText" destination="fYB-R5-F9J" id="CcP-MF-S80"/>
                 <outlet property="view" destination="1" id="3"/>
             </connections>
         </placeholder>
