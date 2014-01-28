@@ -17,5 +17,6 @@
 @property (nonatomic, weak) NSString *datePosted;
 
 @property (nonatomic, weak) UIImage *thumbnail;
+@property (nonatomic, strong) NSString *author;
 
 @end

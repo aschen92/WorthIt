@@ -6,9 +6,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StoryDetailViewController">
             <connections>
-                <outlet property="story" destination="fYB-R5-F9J" id="ETK-IV-pF5"/>
-                <outlet property="storySubject" destination="Lyr-ZQ-WAI" id="iGI-b4-YXi"/>
-                <outlet property="storyText" destination="fYB-R5-F9J" id="CcP-MF-S80"/>
+                <outlet property="storyTextField" destination="fYB-R5-F9J" id="N14-fM-AZr"/>
+                <outlet property="subjectField" destination="Lyr-ZQ-WAI" id="R9F-Mp-eRm"/>
                 <outlet property="view" destination="1" id="3"/>
             </connections>
         </placeholder>
@@ -25,8 +24,8 @@
                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Aaron's Worth It Story" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lyr-ZQ-WAI">
-                    <rect key="frame" x="48" y="85" width="214" height="24"/>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Aaron's Worth It Story" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lyr-ZQ-WAI">
+                    <rect key="frame" x="20" y="85" width="280" height="24"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="22"/>
                     <nil key="highlightedColor"/>

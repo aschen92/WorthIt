@@ -13,7 +13,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="942733_669092529786044_801316760_n.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="1hT-5q-K4D">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="brett_dog.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="1hT-5q-K4D">
                         <rect key="frame" x="6" y="4" width="37" height="35"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     </imageView>
@@ -42,6 +42,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="942733_669092529786044_801316760_n.jpg" width="720" height="960"/>
+        <image name="brett_dog.jpg" width="720" height="960"/>
     </resources>
 </document>

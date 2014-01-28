@@ -24,6 +24,16 @@
 }
 
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    
+    [subjectField setText:[NSString stringWithFormat:@"%@'s Worth It Story", [story author]]];
+    [storyTextField setText:[story storyText]];
+    [subjectField setFont:[UIFont systemFontOfSize:17.0f]];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];

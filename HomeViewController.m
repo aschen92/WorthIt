@@ -29,7 +29,7 @@
 
 - (void)watchVideo:(id)sender
 {
-    NSURL *url = [ [ NSURL alloc ] initWithString: @"http://www.youtube.com" ];
+    NSURL *url = [[NSURL alloc] initWithString: @"https://www.youtube.com/watch?v=_fZ5Vo3WWQQ"];
     [[UIApplication sharedApplication] openURL:url];
 
 }

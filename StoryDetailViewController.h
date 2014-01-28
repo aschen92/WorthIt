@@ -12,8 +12,10 @@
 
 @interface StoryDetailViewController : UIViewController <UINavigationControllerDelegate, UITextFieldDelegate>
 {
-    __weak IBOutlet UILabel *storySubject;
-    __weak IBOutlet UITextView *storyText;
+    
+    __weak IBOutlet UITextView *storyTextField;
+    __weak IBOutlet UILabel *subjectField;
+    
     
     
 }

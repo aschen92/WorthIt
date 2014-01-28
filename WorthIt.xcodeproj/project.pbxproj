@@ -12,7 +12,7 @@
 		93B9D76C1896EF6A00D6604C /* StoryStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 93B9D76B1896EF6A00D6604C /* StoryStore.m */; };
 		C60BE6C1188FA08300C67BA1 /* StoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C60BE6C0188FA08300C67BA1 /* StoryCell.m */; };
 		C60BE6C3188FA09D00C67BA1 /* StoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C60BE6C2188FA09D00C67BA1 /* StoryCell.xib */; };
-		C60BE6C5188FA17E00C67BA1 /* 942733_669092529786044_801316760_n.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C60BE6C4188FA17E00C67BA1 /* 942733_669092529786044_801316760_n.jpg */; };
+		C60BE6C5188FA17E00C67BA1 /* brett_dog.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C60BE6C4188FA17E00C67BA1 /* brett_dog.jpg */; };
 		C69FD1BB188ED88800150019 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C69FD1BA188ED88800150019 /* Foundation.framework */; };
 		C69FD1BD188ED88800150019 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C69FD1BC188ED88800150019 /* CoreGraphics.framework */; };
 		C69FD1BF188ED88800150019 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C69FD1BE188ED88800150019 /* UIKit.framework */; };
@@ -38,6 +38,10 @@
 		C69FD210188EE44700150019 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C69FD20F188EE44700150019 /* MapKit.framework */; };
 		C69FD214188EE73400150019 /* StoryDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C69FD212188EE73400150019 /* StoryDetailViewController.m */; };
 		C69FD215188EE73400150019 /* StoryDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C69FD213188EE73400150019 /* StoryDetailViewController.xib */; };
+		C6E2B47B18981EF700467CF1 /* chris_pic.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C6E2B47818981EF700467CF1 /* chris_pic.jpg */; };
+		C6E2B47C18981EF700467CF1 /* brett_pic.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C6E2B47918981EF700467CF1 /* brett_pic.jpg */; };
+		C6E2B47D18981EF700467CF1 /* aaron_pic.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C6E2B47A18981EF700467CF1 /* aaron_pic.jpg */; };
+		C6E2B4801898202B00467CF1 /* adam_pic.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C6E2B47F1898202B00467CF1 /* adam_pic.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,7 +63,7 @@
 		C60BE6BF188FA08300C67BA1 /* StoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoryCell.h; sourceTree = "<group>"; };
 		C60BE6C0188FA08300C67BA1 /* StoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoryCell.m; sourceTree = "<group>"; };
 		C60BE6C2188FA09D00C67BA1 /* StoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StoryCell.xib; sourceTree = "<group>"; };
-		C60BE6C4188FA17E00C67BA1 /* 942733_669092529786044_801316760_n.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 942733_669092529786044_801316760_n.jpg; sourceTree = "<group>"; };
+		C60BE6C4188FA17E00C67BA1 /* brett_dog.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = brett_dog.jpg; sourceTree = "<group>"; };
 		C60BE6C6188FA8F400C67BA1 /* PREVIEW WorthItCommercial.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PREVIEW WorthItCommercial.mp4"; sourceTree = "<group>"; };
 		C69FD1B7188ED88800150019 /* WorthIt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorthIt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C69FD1BA188ED88800150019 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -94,6 +98,10 @@
 		C69FD211188EE73400150019 /* StoryDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StoryDetailViewController.h; path = ../StoryDetailViewController.h; sourceTree = "<group>"; };
 		C69FD212188EE73400150019 /* StoryDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StoryDetailViewController.m; path = ../StoryDetailViewController.m; sourceTree = "<group>"; };
 		C69FD213188EE73400150019 /* StoryDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = StoryDetailViewController.xib; path = ../StoryDetailViewController.xib; sourceTree = "<group>"; };
+		C6E2B47818981EF700467CF1 /* chris_pic.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = chris_pic.jpg; sourceTree = "<group>"; };
+		C6E2B47918981EF700467CF1 /* brett_pic.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = brett_pic.jpg; sourceTree = "<group>"; };
+		C6E2B47A18981EF700467CF1 /* aaron_pic.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = aaron_pic.jpg; sourceTree = "<group>"; };
+		C6E2B47F1898202B00467CF1 /* adam_pic.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = adam_pic.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +170,7 @@
 				C69FD1F5188ED92400150019 /* Views */,
 				C69FD1F7188ED93800150019 /* Models */,
 				C69FD1F4188ED91A00150019 /* Controllers */,
+				C6E2B47E18981F0700467CF1 /* Pictures */,
 				C69FD1D2188ED88900150019 /* Images.xcassets */,
 				C69FD1C1188ED88800150019 /* Supporting Files */,
 			);
@@ -172,8 +181,6 @@
 			isa = PBXGroup;
 			children = (
 				C60BE6C6188FA8F400C67BA1 /* PREVIEW WorthItCommercial.mp4 */,
-				C60BE6C4188FA17E00C67BA1 /* 942733_669092529786044_801316760_n.jpg */,
-				93AD1D8C188F7A71001C5236 /* logoblack.png */,
 				C69FD206188EE2DC00150019 /* Home@2x.png */,
 				C69FD204188EE0D100150019 /* Hypno@2x.png */,
 				C69FD202188EE0C200150019 /* Time@2x.png */,
@@ -241,6 +248,19 @@
 				93B9D76B1896EF6A00D6604C /* StoryStore.m */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		C6E2B47E18981F0700467CF1 /* Pictures */ = {
+			isa = PBXGroup;
+			children = (
+				93AD1D8C188F7A71001C5236 /* logoblack.png */,
+				C60BE6C4188FA17E00C67BA1 /* brett_dog.jpg */,
+				C6E2B47F1898202B00467CF1 /* adam_pic.jpg */,
+				C6E2B47818981EF700467CF1 /* chris_pic.jpg */,
+				C6E2B47918981EF700467CF1 /* brett_pic.jpg */,
+				C6E2B47A18981EF700467CF1 /* aaron_pic.jpg */,
+			);
+			name = Pictures;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -323,7 +343,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6E2B4801898202B00467CF1 /* adam_pic.jpg in Resources */,
+				C6E2B47C18981EF700467CF1 /* brett_pic.jpg in Resources */,
 				93AD1D8D188F7A71001C5236 /* logoblack.png in Resources */,
+				C6E2B47B18981EF700467CF1 /* chris_pic.jpg in Resources */,
 				C69FD207188EE2DC00150019 /* Home@2x.png in Resources */,
 				C69FD1D3188ED88900150019 /* Images.xcassets in Resources */,
 				C69FD1FC188ED9B100150019 /* StoriesViewController.xib in Resources */,
@@ -331,8 +354,9 @@
 				C69FD1C5188ED88800150019 /* InfoPlist.strings in Resources */,
 				C69FD205188EE0D100150019 /* Hypno@2x.png in Resources */,
 				C69FD201188EDE1900150019 /* HomeViewController.xib in Resources */,
+				C6E2B47D18981EF700467CF1 /* aaron_pic.jpg in Resources */,
 				C69FD215188EE73400150019 /* StoryDetailViewController.xib in Resources */,
-				C60BE6C5188FA17E00C67BA1 /* 942733_669092529786044_801316760_n.jpg in Resources */,
+				C60BE6C5188FA17E00C67BA1 /* brett_dog.jpg in Resources */,
 				C69FD203188EE0C200150019 /* Time@2x.png in Resources */,
 				C60BE6C3188FA09D00C67BA1 /* StoryCell.xib in Resources */,
 			);
