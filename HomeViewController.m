@@ -29,8 +29,16 @@
 
 - (void)watchVideo:(id)sender
 {
-    NSURL *url = [[NSURL alloc] initWithString: @"https://www.youtube.com/watch?v=_fZ5Vo3WWQQ"];
-    [[UIApplication sharedApplication] openURL:url];
+//    NSURL *url = [[NSURL alloc] initWithString: @"https://www.youtube.com/watch?v=_fZ5Vo3WWQQ"];
+//    [[UIApplication sharedApplication] openURL:url];
+    
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"worth_it" ofType:@"mp4"];
+    player = [[MPMoviePlayerViewController alloc] initWithContentURL:[NSURL fileURLWithPath:path]];
+    
+    
+    
+    [self presentMoviePlayerViewControllerAnimated:player];
+    
 
 }
 

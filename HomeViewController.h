@@ -7,8 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MediaPlayer/MediaPlayer.h>
 
 @interface HomeViewController : UIViewController
+{
+    MPMoviePlayerViewController *player;
+}
 
 - (IBAction)watchVideo:(id)sender;
 - (IBAction)showStories:(id)sender;

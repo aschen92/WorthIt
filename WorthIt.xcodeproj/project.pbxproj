@@ -42,6 +42,8 @@
 		C6E2B47C18981EF700467CF1 /* brett_pic.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C6E2B47918981EF700467CF1 /* brett_pic.jpg */; };
 		C6E2B47D18981EF700467CF1 /* aaron_pic.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C6E2B47A18981EF700467CF1 /* aaron_pic.jpg */; };
 		C6E2B4801898202B00467CF1 /* adam_pic.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C6E2B47F1898202B00467CF1 /* adam_pic.jpg */; };
+		C6E2B482189828DF00467CF1 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6E2B481189828DF00467CF1 /* MediaPlayer.framework */; };
+		C6E2B48318982D8900467CF1 /* worth_it.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = C60BE6C6188FA8F400C67BA1 /* worth_it.mp4 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,7 +66,7 @@
 		C60BE6C0188FA08300C67BA1 /* StoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoryCell.m; sourceTree = "<group>"; };
 		C60BE6C2188FA09D00C67BA1 /* StoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StoryCell.xib; sourceTree = "<group>"; };
 		C60BE6C4188FA17E00C67BA1 /* brett_dog.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = brett_dog.jpg; sourceTree = "<group>"; };
-		C60BE6C6188FA8F400C67BA1 /* PREVIEW WorthItCommercial.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PREVIEW WorthItCommercial.mp4"; sourceTree = "<group>"; };
+		C60BE6C6188FA8F400C67BA1 /* worth_it.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = worth_it.mp4; sourceTree = "<group>"; };
 		C69FD1B7188ED88800150019 /* WorthIt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorthIt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C69FD1BA188ED88800150019 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C69FD1BC188ED88800150019 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -102,6 +104,7 @@
 		C6E2B47918981EF700467CF1 /* brett_pic.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = brett_pic.jpg; sourceTree = "<group>"; };
 		C6E2B47A18981EF700467CF1 /* aaron_pic.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = aaron_pic.jpg; sourceTree = "<group>"; };
 		C6E2B47F1898202B00467CF1 /* adam_pic.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = adam_pic.jpg; sourceTree = "<group>"; };
+		C6E2B481189828DF00467CF1 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +112,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6E2B482189828DF00467CF1 /* MediaPlayer.framework in Frameworks */,
 				C69FD210188EE44700150019 /* MapKit.framework in Frameworks */,
 				C69FD20E188EE40100150019 /* CoreLocation.framework in Frameworks */,
 				C69FD1BD188ED88800150019 /* CoreGraphics.framework in Frameworks */,
@@ -152,6 +156,7 @@
 		C69FD1B9188ED88800150019 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C6E2B481189828DF00467CF1 /* MediaPlayer.framework */,
 				C69FD20F188EE44700150019 /* MapKit.framework */,
 				C69FD20D188EE40100150019 /* CoreLocation.framework */,
 				C69FD1BA188ED88800150019 /* Foundation.framework */,
@@ -180,7 +185,7 @@
 		C69FD1C1188ED88800150019 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				C60BE6C6188FA8F400C67BA1 /* PREVIEW WorthItCommercial.mp4 */,
+				C60BE6C6188FA8F400C67BA1 /* worth_it.mp4 */,
 				C69FD206188EE2DC00150019 /* Home@2x.png */,
 				C69FD204188EE0D100150019 /* Hypno@2x.png */,
 				C69FD202188EE0C200150019 /* Time@2x.png */,
@@ -343,6 +348,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C6E2B48318982D8900467CF1 /* worth_it.mp4 in Resources */,
 				C6E2B4801898202B00467CF1 /* adam_pic.jpg in Resources */,
 				C6E2B47C18981EF700467CF1 /* brett_pic.jpg in Resources */,
 				93AD1D8D188F7A71001C5236 /* logoblack.png in Resources */,
