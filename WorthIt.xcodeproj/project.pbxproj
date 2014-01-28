@@ -223,9 +223,9 @@
 			children = (
 				C69FD1FF188EDE1900150019 /* HomeViewController.xib */,
 				C69FD1FA188ED9B100150019 /* StoriesViewController.xib */,
-				C69FD20A188EE33D00150019 /* LocationViewController.xib */,
-				C69FD213188EE73400150019 /* StoryDetailViewController.xib */,
 				C60BE6C2188FA09D00C67BA1 /* StoryCell.xib */,
+				C69FD213188EE73400150019 /* StoryDetailViewController.xib */,
+				C69FD20A188EE33D00150019 /* LocationViewController.xib */,
 				C60BE6BF188FA08300C67BA1 /* StoryCell.h */,
 				C60BE6C0188FA08300C67BA1 /* StoryCell.m */,
 			);

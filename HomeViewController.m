@@ -8,6 +8,7 @@
 
 #import "HomeViewController.h"
 #import "StoriesViewController.h"
+#import "StoryDetailViewController.h"
 
 @interface HomeViewController ()
 
@@ -36,7 +37,9 @@
 - (IBAction)showStories:(id)sender
 {
     StoriesViewController *svc = [[StoriesViewController alloc] init];
-    [self presentViewController:svc animated:YES completion:nil];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:svc];
+    
+    [self presentViewController:nav animated:YES completion:nil];
 }
 
 - (void)viewDidLoad

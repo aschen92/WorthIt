@@ -14,6 +14,7 @@
 
 @property (retain, nonatomic) NSArray *items;
 
--(IBAction)addNewItem:(id)sender;
+- (IBAction)addNewItem:(id)sender;
+- (IBAction)done:(id)sender;
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "StoriesViewController.h"
+#import "HomeViewController.h"
 #import "StoryCell.h"
 #import "StoryDetailViewController.h"
 #import "StoryStore.h"
@@ -19,6 +20,29 @@
 
 
 #pragma mark - Set-up stuff
+
+- (id)init
+{
+    self = [super initWithNibName:@"StoriesViewController" bundle:nil];
+    if (self) {
+        UINavigationItem *nav = [self navigationItem];
+        [nav setTitle:@"Stories"];
+        
+        UIBarButtonItem *bbi = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(done:)];
+        
+        [[self navigationItem] setRightBarButtonItem:bbi];
+        [[self navigationItem] setLeftBarButtonItem:[self editButtonItem]];
+    }
+    
+    return self;
+}
+
+- (void)done:(id)sender
+{
+    // BAD DESIGN AHHH
+    HomeViewController *hvc = [[HomeViewController alloc] init];
+    [self presentViewController:hvc animated:YES completion:nil];
+}
 
 - (void)viewDidLoad
 {
@@ -34,8 +58,6 @@
     items = [[NSArray alloc] initWithObjects:story1, story2, nil];
     
 }
-
-
 
 
 #pragma mark - Table view data source
@@ -67,6 +89,20 @@
     [[cell dateLabel] setText:[story datePosted]];
     
     return cell;
+}
+
+#pragma mark - Optional overrides
+
+- (void)tableView:(UITableView *)tableView
+didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    StoryDetailViewController *storyDetailViewController = [[StoryDetailViewController alloc] initWithNewStory:NO];
+    
+    Story *selectedStory = [items objectAtIndex:[indexPath row]];
+    
+    [storyDetailViewController setStory:selectedStory];
+    
+    [[self navigationController] pushViewController:storyDetailViewController animated:YES];
 }
 
 
