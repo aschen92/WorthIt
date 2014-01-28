@@ -3,7 +3,7 @@
 //  WorthIt
 //
 //  Created by Aaron on 1/27/14.
-//  Copyright (c) 2014 Aschen Inc. All rights reserved.
+//  Copyright (c) 2014 Aschen Inc. All rights reser	ved.
 //
 
 #import <Foundation/Foundation.h>

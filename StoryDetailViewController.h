@@ -10,7 +10,7 @@
 
 @class Story;
 
-@interface StoryDetailViewController : UIViewController
+@interface StoryDetailViewController : UIViewController <UINavigationControllerDelegate, UITextFieldDelegate>
 {
     __weak IBOutlet UILabel *storySubject;
     __weak IBOutlet UITextView *storyText;

@@ -18,15 +18,7 @@
 {
     self = [super init];
     if (self) {
-        Story *story1 = [[Story alloc] init];
-        [allItems addObject:story1];
-        [story1 setStoryText:@"This is my story LAWL"];
-        [story1 setSubject:@"This is my subject LAWL"];
-        
-        
-        
-        
-        
+                
     }
     return self;
 }

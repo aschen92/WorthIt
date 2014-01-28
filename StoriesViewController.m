@@ -12,109 +12,60 @@
 #import "StoryStore.h"
 #import "Story.h"
 
-@interface StoriesViewController ()
 
-@end
 
 @implementation StoriesViewController
+@synthesize tableView, items;
 
-- (void)addNewItem:(id)sender
-{
-    
-    // THIS IS THE NEXT THING TO WORK ON
-    StoryStore *sharedStore = [[StoryStore alloc] init];
-    Story *story1 = [[Story alloc] init];
-    [sharedStore addItem:story1];
-    
-    StoryDetailViewController *storyDetailViewController = [[StoryDetailViewController alloc] initWithNewStory:YES];
-    [storyDetailViewController setStory:story1];
-    [storyDetailViewController setDismissBlock:^{
-        [[self tableView] reloadData];
-    }];
-    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:storyDetailViewController];
-    
-    [navController setModalPresentationStyle:UIModalPresentationFormSheet];
-    [self presentViewController:navController animated:YES completion:nil];
 
-}
-
-- (id)init
-{
-    self = [super initWithStyle:UITableViewStyleGrouped];
-    if (self) {
-        
-    
-        UINavigationItem *n = [self navigationItem];
-        [n setTitle:@"Stories"];
-    
-        self.tableView.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, self.tableView.bounds.size.width, 0.01f)];
-        
-        UIBarButtonItem *bbi = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addNewItem:)];
-        
-        [[self navigationItem] setRightBarButtonItem:bbi];
-        [[self navigationItem] setLeftBarButtonItem:[self editButtonItem]];
-    
-    
-    
-//    NSBundle *appBundle = [NSBundle mainBundle];
-//    self = [super initWithNibName:@"StoriesViewController" bundle:appBundle];
-//    if (self) {
-//        UITabBarItem *tbi = [self tabBarItem];
-//        [tbi setTitle:@"Stories"];
-//        UIImage *i = [UIImage imageNamed:@"Time.png"];
-//        [tbi setImage:i];
-    
-        
-    }
-    return self;
-}
-
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    return [self init];
-}
+#pragma mark - Set-up stuff
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
+    Story *story1 = [[Story alloc] init];
+    [story1 setStoryText:@"I LOVED MAH KITTY SO MUCH EYE DIED"];
+    [story1 setSubject:@"MAH KITTEH"];
+    [story1 setDatePosted:@"1/28/14"];
     
-    UINib *nib = [UINib nibWithNibName:@"StoryCell" bundle:nil];
-    [[self tableView] registerNib:nib forCellReuseIdentifier:@"StoryCell"];
+    Story *story2 = [[Story alloc] init];
+    [story2 setStoryText:@"I LOVED MAH BRETTIFER SOOOOOOO MUCH THAT THINGS HAPPENED"];
+    [story2 setSubject:@"BRETTIFER"];
+    [story2 setDatePosted:@"1/30/14"];
+    items = [[NSArray alloc] initWithObjects:story1, story2, nil];
+    
 }
 
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-    [[self tableView] reloadData];
-}
 
 
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+#pragma mark - Table view data source
 
 - (NSInteger)tableView:(UITableView *)tableView
  numberOfRowsInSection:(NSInteger)section
 {
-    return [[[StoryStore sharedStore] allItems] count];
+//    return [[[StoryStore sharedStore] allItems] count];
+    return [items count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    static NSString *CellIdentifier = @"StoryCell";
+    StoryCell *cell = (StoryCell *) [[self tableView] dequeueReusableCellWithIdentifier:CellIdentifier];
     
-    Story *s = [[[StoryStore sharedStore] allItems] objectAtIndex:[indexPath row]];
-    StoryCell *cell = [tableView dequeueReusableCellWithIdentifier:@"StoryCell"];
+    if (cell == nil) {
+        NSArray *topLevelObjects = [[NSBundle mainBundle] loadNibNamed:@"StoryCell" owner:self options:nil];
+        for (id currentObject in topLevelObjects) {
+            if ([currentObject isKindOfClass:[UITableViewCell class]]) {
+                cell = (StoryCell *)currentObject;
+                break;
+            }
+        }
+    }
     
-    [cell setController:self];
-    [cell setTableView:tableView];
+    Story *story = [items objectAtIndex:indexPath.row];
+    [[cell storySubject] setText:[story subject]];
+    [[cell dateLabel] setText:[story datePosted]];
     
-    [[cell storySubject] setText:[s subject]];
-    
-    //change to an NSDate
-    [[cell dateLabel] setText:[s datePosted]];
     return cell;
 }
 

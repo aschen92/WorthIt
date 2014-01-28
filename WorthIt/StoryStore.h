@@ -13,8 +13,6 @@
 @interface StoryStore : NSObject
 {
     NSMutableArray *allItems;
-    NSManagedObjectContext *context;
-    NSManagedObjectModel *model;
 }
 
 + (StoryStore *)sharedStore;

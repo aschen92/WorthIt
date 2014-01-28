@@ -8,7 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface StoriesViewController : UITableViewController
+@interface StoriesViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
+
+@property (retain, nonatomic) NSArray *items;
 
 -(IBAction)addNewItem:(id)sender;
 
