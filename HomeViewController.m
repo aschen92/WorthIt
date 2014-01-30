@@ -9,6 +9,7 @@
 #import "HomeViewController.h"
 #import "StoriesViewController.h"
 #import "StoryDetailViewController.h"
+#import "LocationViewController.h"
 
 @interface HomeViewController ()
 
@@ -48,6 +49,12 @@
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:svc];
     
     [self presentViewController:nav animated:YES completion:nil];
+}
+
+- (IBAction)showMap:(id)sender
+{
+    LocationViewController *lvc = [[LocationViewController alloc] init];
+    [self presentViewController:lvc animated:YES completion:nil];
 }
 
 - (void)viewDidLoad

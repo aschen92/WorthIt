@@ -16,5 +16,6 @@
 
 - (IBAction)watchVideo:(id)sender;
 - (IBAction)showStories:(id)sender;
+- (IBAction)showMap:(id)sender;
 
 @end
