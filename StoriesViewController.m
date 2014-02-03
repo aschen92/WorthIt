@@ -49,10 +49,6 @@
 - (void)viewDidLoad
 {
     
-    
-    //items = [[StoryStore sharedStore] allItems];
-    //NSLog(@"%@",items);
-    
 }
 
 
