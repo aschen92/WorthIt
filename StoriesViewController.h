@@ -12,7 +12,6 @@
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 
-@property (retain, nonatomic) NSArray *items;
 
 - (IBAction)addNewItem:(id)sender;
 - (IBAction)done:(id)sender;

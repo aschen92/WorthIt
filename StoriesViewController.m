@@ -16,7 +16,7 @@
 
 
 @implementation StoriesViewController
-@synthesize tableView, items;
+@synthesize tableView;
 
 
 #pragma mark - Set-up stuff
@@ -32,6 +32,8 @@
         
         [[self navigationItem] setRightBarButtonItem:bbi];
         [[self navigationItem] setLeftBarButtonItem:[self editButtonItem]];
+        
+        
     }
     
     return self;
@@ -46,36 +48,10 @@
 
 - (void)viewDidLoad
 {
-    Story *story1 = [[Story alloc] init];
-    NSString *aaronsStory = @"My experience at Wartburg College allowed me to succeed in ways that I never though possible. I had one professor that was willing to offer extra help whenever I needed it. The staff in the business office allowed me to actually figure out my loans so that I could pay it off in a timely manner.";
-    [story1 setStoryText:aaronsStory];
-    [story1 setSubject:@"Financial Aid"];
-    [story1 setDatePosted:@"1/20/14"];
-    [story1 setAuthor:@"Aaron"];
-    [story1 setThumbnail:[UIImage imageNamed:@"aaron_pic.jpg"]];
     
-    Story *story2 = [[Story alloc] init];
-    [story2 setStoryText:@"Dr. Zelle's Story Text"];
-    [story2 setSubject:@"Athletics helped me through"];
-    [story2 setDatePosted:@"1/25/14"];
-    [story2 setAuthor:@"Adam"];
-    [story2 setThumbnail:[UIImage imageNamed:@"adam_pic.jpg"]];
     
-    Story *story3 = [[Story alloc] init];
-    [story3 setStoryText:@"Brett's Story Text"];
-    [story3 setSubject:@"Wartburg Choir"];
-    [story3 setDatePosted:@"1/28/14"];
-    [story3 setAuthor:@"Brett"];
-    [story3 setThumbnail:[UIImage imageNamed:@"brett_pic.jpg"]];
-    
-    Story *story4 = [[Story alloc] init];
-    [story4 setStoryText:@"Chris' Story Text"];
-    [story4 setSubject:@"The Mensa food was SO goodddddddddd"];
-    [story4 setDatePosted:@"1/30/14"];
-    [story4 setAuthor:@"Chris"];
-    [story4 setThumbnail:[UIImage imageNamed:@"chris_pic.jpg"]];
-    
-    items = [[NSArray alloc] initWithObjects:story1, story2, story3, story4, nil];
+    //items = [[StoryStore sharedStore] allItems];
+    //NSLog(@"%@",items);
     
 }
 
@@ -86,7 +62,7 @@
  numberOfRowsInSection:(NSInteger)section
 {
 //    return [[[StoryStore sharedStore] allItems] count];
-    return [items count];
+    return [[[StoryStore sharedStore] allItems] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -104,7 +80,7 @@
         }
     }
     
-    Story *story = [items objectAtIndex:indexPath.row];
+    Story *story = [[[StoryStore sharedStore] allItems] objectAtIndex:indexPath.row];
     [[cell storySubject] setText:[story subject]];
     [[cell dateLabel] setText:[story datePosted]];
     [[cell profilePicture] setImage:[story thumbnail]];
@@ -119,7 +95,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     StoryDetailViewController *storyDetailViewController = [[StoryDetailViewController alloc] initWithNewStory:NO];
     
-    Story *selectedStory = [items objectAtIndex:[indexPath row]];
+    Story *selectedStory = [[[StoryStore sharedStore] allItems] objectAtIndex:[indexPath row]];
     
     [storyDetailViewController setStory:selectedStory];
     
