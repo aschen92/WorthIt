@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <MediaPlayer/MediaPlayer.h>
+#import <FacebookSDK/FacebookSDK.h>
 
 
 @interface HomeViewController : UIViewController <UINavigationControllerDelegate>
@@ -16,6 +17,9 @@
 }
 
 @property(retain) IBOutlet UIButton *storyMap;
+@property (weak, nonatomic) IBOutlet FBProfilePictureView *profilePicture;
+
+@property(nonatomic) NSString *uID;
 
 - (IBAction)watchVideo:(id)sender;
 - (IBAction)showStories:(id)sender;

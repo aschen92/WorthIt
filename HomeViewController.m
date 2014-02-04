@@ -40,18 +40,34 @@
 {
     //allows you to get info about the user
     
+    [FBRequestConnection startForMeWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
+        if (!error) {
+            // Success! Include your code to handle the results here
+            NSLog(@"user info: %@", result);
+        } else {
+            // An error occurred, we need to handle the error
+            // See: https://developers.facebook.com/docs/ios/errors
+        }
+    }];
+    
+    self.uID = user.id;
+    
+    self.profilePicture.profileID = self.uID;
 }
 
 - (void)loginViewShowingLoggedInUser:(FBLoginView *)loginView
 {
     // changes the UI for a logged in user
     [self.storyMap setEnabled:YES];
+    
+
 }
 
 - (void)loginViewShowingLoggedOutUser:(FBLoginView *)loginView
 {
     // changes the UI for a logged out user
     [self.storyMap setEnabled:NO];
+    self.profilePicture.profileID = nil;
 }
 
 // Handle possible errors that can occur during login

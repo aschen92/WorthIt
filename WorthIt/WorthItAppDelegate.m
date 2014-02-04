@@ -19,6 +19,7 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
     [FBLoginView class];
+    [FBProfilePictureView class];
     
     HomeViewController *hvc = [[HomeViewController alloc] init];
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:hvc];

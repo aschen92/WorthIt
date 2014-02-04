@@ -6,8 +6,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController">
             <connections>
+                <outlet property="profilePicture" destination="mw4-1N-Vc0" id="mdd-Br-I3d"/>
                 <outlet property="storyMap" destination="fjL-cD-gHS" id="lIy-G2-Sa4"/>
-                <outlet property="view" destination="1" id="3"/>
+                <outlet property="view" destination="1" id="2nW-8M-CNo"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -59,6 +60,11 @@
                         <action selector="watchVideo:" destination="-1" eventType="touchUpInside" id="GH6-3g-67V"/>
                     </connections>
                 </button>
+                <view contentMode="center" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mw4-1N-Vc0" customClass="FBProfilePictureView">
+                    <rect key="frame" x="158" y="236" width="142" height="144"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
