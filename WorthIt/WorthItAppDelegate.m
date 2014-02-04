@@ -10,12 +10,15 @@
 #import "StoriesViewController.h"
 #import "HomeViewController.h"
 #import "LocationViewController.h"
+#import <FacebookSDK/FacebookSDK.h>
 
 @implementation WorthItAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    [FBLoginView class];
     
     HomeViewController *hvc = [[HomeViewController alloc] init];
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:hvc];
@@ -24,26 +27,22 @@
     [self.window makeKeyAndVisible];
     return YES;
     
-    
-    
-//    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-//    // Override point for customization after application launch.
-//    
-//    StoriesViewController *svc = [[StoriesViewController alloc] init];
-//    HomeViewController *hvc = [[HomeViewController alloc] init];
-//    LocationViewController *lvc = [[LocationViewController alloc] init];
-//    
-//    UITabBarController *tabBarController = [[UITabBarController alloc] init];
-//    NSArray *viewControllers = [NSArray arrayWithObjects:hvc, svc, lvc, nil];
-//    [tabBarController setViewControllers:viewControllers];
-//    [[self window] setRootViewController:tabBarController];
-//    
-//    self.window.backgroundColor = [UIColor whiteColor];
-//    [self.window makeKeyAndVisible];
-//    
-//    return YES;
+
 }
-							
+
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication
+         annotation:(id)annotation {
+    
+    // Call FBAppCall's handleOpenURL:sourceApplication to handle Facebook app responses
+    BOOL wasHandled = [FBAppCall handleOpenURL:url sourceApplication:sourceApplication];
+    
+    // You can add your app-specific url handling code here if needed
+    
+    return wasHandled;
+}
+
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

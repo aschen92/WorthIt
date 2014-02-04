@@ -10,23 +10,48 @@
 #import "StoriesViewController.h"
 #import "StoryDetailViewController.h"
 #import "LocationViewController.h"
+#import <FacebookSDK/FacebookSDK.h>
 
-@interface HomeViewController ()
+@interface HomeViewController () <FBLoginViewDelegate>
 
 @end
 
 @implementation HomeViewController
+
+#pragma mark - Set Up
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     NSBundle *appBundle = [NSBundle mainBundle];
     self = [super initWithNibName:@"HomeViewController" bundle:appBundle];
     if (self) {
-        
-        
+        FBLoginView *loginView = [[FBLoginView alloc] init];
+        loginView.delegate = self;
+        [self.view addSubview:loginView];
+        [self.storyMap setEnabled:NO];
     }
     return self;
 }
+
+#pragma mark - Facebook methods
+
+- (void)loginViewFetchedUserInfo:(FBLoginView *)loginView user:(id<FBGraphUser>)user
+{
+    //allows you to get info about the user
+    NSInteger uID = user.id;
+}
+
+- (void)loginViewShowingLoggedInUser:(FBLoginView *)loginView
+{
+    // changes the UI for a logged in user
+}
+
+- (void)loginViewShowingLoggedOutUser:(FBLoginView *)loginView
+{
+    // changes the UI for a logged out user
+}
+
+#pragma mark - Buttons n stuff
 
 - (void)watchVideo:(id)sender
 {

@@ -15,6 +15,8 @@
     MPMoviePlayerViewController *player;
 }
 
+@property(retain) IBOutlet UIButton *storyMap;
+
 - (IBAction)watchVideo:(id)sender;
 - (IBAction)showStories:(id)sender;
 - (IBAction)showMap:(id)sender;
