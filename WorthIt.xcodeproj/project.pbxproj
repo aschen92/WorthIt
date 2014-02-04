@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		931F766018A03EAA00422E52 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 931F765F18A03EAA00422E52 /* FacebookSDK.framework */; };
 		93AD1D8D188F7A71001C5236 /* logoblack.png in Resources */ = {isa = PBXBuildFile; fileRef = 93AD1D8C188F7A71001C5236 /* logoblack.png */; };
 		93B9D7691896EBEE00D6604C /* Story.m in Sources */ = {isa = PBXBuildFile; fileRef = 93B9D7681896EBEE00D6604C /* Story.m */; };
 		93B9D76C1896EF6A00D6604C /* StoryStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 93B9D76B1896EF6A00D6604C /* StoryStore.m */; };
 		C60BE6C1188FA08300C67BA1 /* StoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C60BE6C0188FA08300C67BA1 /* StoryCell.m */; };
 		C60BE6C3188FA09D00C67BA1 /* StoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C60BE6C2188FA09D00C67BA1 /* StoryCell.xib */; };
 		C60BE6C5188FA17E00C67BA1 /* brett_dog.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C60BE6C4188FA17E00C67BA1 /* brett_dog.jpg */; };
+		C611A01A18A0906A00D9EE44 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 931F765F18A03EAA00422E52 /* FacebookSDK.framework */; };
 		C69FD1BB188ED88800150019 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C69FD1BA188ED88800150019 /* Foundation.framework */; };
 		C69FD1BD188ED88800150019 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C69FD1BC188ED88800150019 /* CoreGraphics.framework */; };
 		C69FD1BF188ED88800150019 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C69FD1BE188ED88800150019 /* UIKit.framework */; };
@@ -114,7 +114,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				931F766018A03EAA00422E52 /* FacebookSDK.framework in Frameworks */,
+				C611A01A18A0906A00D9EE44 /* FacebookSDK.framework in Frameworks */,
 				C6E2B482189828DF00467CF1 /* MediaPlayer.framework in Frameworks */,
 				C69FD210188EE44700150019 /* MapKit.framework in Frameworks */,
 				C69FD20E188EE40100150019 /* CoreLocation.framework in Frameworks */,
@@ -519,6 +519,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/aaron/Documents/FacebookSDK,
+					"/Users/thecomwiz/Dropbox/Wartburg/Files/Senior\\ Year/Semester\\ 2/design_project/iOS_Projects/FacebookSDK",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WorthIt/WorthIt-Prefix.pch";
@@ -539,6 +540,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/aaron/Documents/FacebookSDK,
+					"/Users/thecomwiz/Dropbox/Wartburg/Files/Senior\\ Year/Semester\\ 2/design_project/iOS_Projects/FacebookSDK",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WorthIt/WorthIt-Prefix.pch";
