@@ -40,5 +40,14 @@
 	<string>254369684738964</string>
 	<key>FacebookDisplayName</key>
 	<string>seniorAppTest</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>fb254369684738964</string>
+			</array>
+		</dict>
+	</array>
 </dict>
 </plist>
