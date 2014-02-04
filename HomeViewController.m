@@ -43,22 +43,24 @@
     [FBRequestConnection startForMeWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
         if (!error) {
             // Success! Include your code to handle the results here
-            NSLog(@"user info: %@", result);
+      //      NSLog(@"user info: %@", result);
         } else {
             // An error occurred, we need to handle the error
             // See: https://developers.facebook.com/docs/ios/errors
         }
     }];
     
-    self.uID = user.id;
+    self.userID = user.id;
     
-    self.profilePicture.profileID = self.uID;
+    self.profilePicture.profileID = self.userID;
 }
 
 - (void)loginViewShowingLoggedInUser:(FBLoginView *)loginView
 {
     // changes the UI for a logged in user
     [self.storyMap setEnabled:YES];
+    [self.storiesButton setEnabled:YES];
+    [self.instructionLabel setHidden:YES];
     
 
 }
@@ -67,6 +69,8 @@
 {
     // changes the UI for a logged out user
     [self.storyMap setEnabled:NO];
+    [self.storiesButton setEnabled:NO];
+    [self.instructionLabel setHidden:NO];
     self.profilePicture.profileID = nil;
 }
 

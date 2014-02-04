@@ -17,9 +17,12 @@
 }
 
 @property(retain) IBOutlet UIButton *storyMap;
+@property(retain) IBOutlet UIButton *storiesButton;
+@property (weak, nonatomic) IBOutlet UILabel *instructionLabel;
+
 @property (weak, nonatomic) IBOutlet FBProfilePictureView *profilePicture;
 
-@property(nonatomic) NSString *uID;
+@property(nonatomic) NSString *userID;
 
 - (IBAction)watchVideo:(id)sender;
 - (IBAction)showStories:(id)sender;
