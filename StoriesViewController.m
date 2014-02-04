@@ -12,6 +12,7 @@
 #import "StoryDetailViewController.h"
 #import "StoryStore.h"
 #import "Story.h"
+#import "NewStoryViewController.h"
 
 
 
@@ -29,16 +30,22 @@
         [nav setTitle:@"Stories"];
         [[[self navigationController] navigationBar] setHidden:NO];
         
-        //UIBarButtonItem *bbi = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(done:)];
+        UIBarButtonItem *bbi = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addNewItem:)];
         
-        //[[self navigationItem] setRightBarButtonItem:bbi];
+        [[self navigationItem] setRightBarButtonItem:bbi];
         //[[self navigationItem] setLeftBarButtonItem:[self editButtonItem]];
-        
         
     }
     
     return self;
 }
+
+- (void)viewDidLoad
+{
+    
+}
+
+#pragma mark - Button methods
 
 - (void)done:(id)sender
 {
@@ -46,8 +53,16 @@
     [[self navigationController] popViewControllerAnimated:YES];
 }
 
-- (void)viewDidLoad
+- (void)addNewItem:(id)sender
 {
+    Story *story = [[StoryStore sharedStore] createStory];
+    NewStoryViewController *newStoryViewController = [[NewStoryViewController alloc] init];
+    [newStoryViewController setDismissBlock:^{
+        [[self tableView] reloadData];
+    }];
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:newStoryViewController];
+    [navController setModalPresentationStyle:UIModalPresentationFormSheet];
+    [self presentViewController:navController animated:YES completion:nil];
     
 }
 
