@@ -25,11 +25,18 @@
     NSBundle *appBundle = [NSBundle mainBundle];
     self = [super initWithNibName:@"HomeViewController" bundle:appBundle];
     if (self) {
+        
+        // creates the login button and displays it
         FBLoginView *loginView = [[FBLoginView alloc] init];
         loginView.delegate = self;
         [self.view addSubview:loginView];
+        
+        // chooses where the login button is displayed
         loginView.frame = CGRectOffset(loginView.frame, (self.view.center.x - (loginView.frame.size.width / 2)), (self.view.center.y - 150));
+        
+        // disabling the storyMap/stories buttons
         [self.storyMap setEnabled:NO];
+        [self.storiesButton setEnabled:NO];
     }
     return self;
 }
@@ -57,7 +64,7 @@
 
 - (void)loginViewShowingLoggedInUser:(FBLoginView *)loginView
 {
-    // changes the UI for a logged in user
+    // changes the UI for a logged IN user
     [self.storyMap setEnabled:YES];
     [self.storiesButton setEnabled:YES];
     [self.instructionLabel setHidden:YES];
@@ -67,7 +74,7 @@
 
 - (void)loginViewShowingLoggedOutUser:(FBLoginView *)loginView
 {
-    // changes the UI for a logged out user
+    // changes the UI for a logged OUT user
     [self.storyMap setEnabled:NO];
     [self.storiesButton setEnabled:NO];
     [self.instructionLabel setHidden:NO];
