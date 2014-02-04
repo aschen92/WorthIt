@@ -13,7 +13,7 @@
 		C60BE6C1188FA08300C67BA1 /* StoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C60BE6C0188FA08300C67BA1 /* StoryCell.m */; };
 		C60BE6C3188FA09D00C67BA1 /* StoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C60BE6C2188FA09D00C67BA1 /* StoryCell.xib */; };
 		C60BE6C5188FA17E00C67BA1 /* brett_dog.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C60BE6C4188FA17E00C67BA1 /* brett_dog.jpg */; };
-		C635423318A092960023FF74 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C635423218A092960023FF74 /* FacebookSDK.framework */; };
+		C635423418A0933F0023FF74 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C635423218A092960023FF74 /* FacebookSDK.framework */; };
 		C69FD1BB188ED88800150019 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C69FD1BA188ED88800150019 /* Foundation.framework */; };
 		C69FD1BD188ED88800150019 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C69FD1BC188ED88800150019 /* CoreGraphics.framework */; };
 		C69FD1BF188ED88800150019 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C69FD1BE188ED88800150019 /* UIKit.framework */; };
@@ -30,9 +30,6 @@
 		C69FD1FC188ED9B100150019 /* StoriesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C69FD1FA188ED9B100150019 /* StoriesViewController.xib */; };
 		C69FD200188EDE1900150019 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C69FD1FE188EDE1900150019 /* HomeViewController.m */; };
 		C69FD201188EDE1900150019 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C69FD1FF188EDE1900150019 /* HomeViewController.xib */; };
-		C69FD203188EE0C200150019 /* Time@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C69FD202188EE0C200150019 /* Time@2x.png */; };
-		C69FD205188EE0D100150019 /* Hypno@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C69FD204188EE0D100150019 /* Hypno@2x.png */; };
-		C69FD207188EE2DC00150019 /* Home@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C69FD206188EE2DC00150019 /* Home@2x.png */; };
 		C69FD20B188EE33D00150019 /* LocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C69FD209188EE33D00150019 /* LocationViewController.m */; };
 		C69FD20C188EE33D00150019 /* LocationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C69FD20A188EE33D00150019 /* LocationViewController.xib */; };
 		C69FD20E188EE40100150019 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C69FD20D188EE40100150019 /* CoreLocation.framework */; };
@@ -91,9 +88,6 @@
 		C69FD1FD188EDE1900150019 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HomeViewController.h; path = ../HomeViewController.h; sourceTree = "<group>"; };
 		C69FD1FE188EDE1900150019 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomeViewController.m; path = ../HomeViewController.m; sourceTree = "<group>"; };
 		C69FD1FF188EDE1900150019 /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = HomeViewController.xib; path = ../HomeViewController.xib; sourceTree = "<group>"; };
-		C69FD202188EE0C200150019 /* Time@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Time@2x.png"; sourceTree = "<group>"; };
-		C69FD204188EE0D100150019 /* Hypno@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Hypno@2x.png"; sourceTree = "<group>"; };
-		C69FD206188EE2DC00150019 /* Home@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Home@2x.png"; path = "../Home@2x.png"; sourceTree = "<group>"; };
 		C69FD208188EE33D00150019 /* LocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LocationViewController.h; path = ../LocationViewController.h; sourceTree = "<group>"; };
 		C69FD209188EE33D00150019 /* LocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LocationViewController.m; path = ../LocationViewController.m; sourceTree = "<group>"; };
 		C69FD20A188EE33D00150019 /* LocationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LocationViewController.xib; path = ../LocationViewController.xib; sourceTree = "<group>"; };
@@ -114,13 +108,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C635423418A0933F0023FF74 /* FacebookSDK.framework in Frameworks */,
 				C6E2B482189828DF00467CF1 /* MediaPlayer.framework in Frameworks */,
 				C69FD210188EE44700150019 /* MapKit.framework in Frameworks */,
 				C69FD20E188EE40100150019 /* CoreLocation.framework in Frameworks */,
 				C69FD1BD188ED88800150019 /* CoreGraphics.framework in Frameworks */,
 				C69FD1BF188ED88800150019 /* UIKit.framework in Frameworks */,
 				C69FD1BB188ED88800150019 /* Foundation.framework in Frameworks */,
-				C635423318A092960023FF74 /* FacebookSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -190,9 +184,6 @@
 			isa = PBXGroup;
 			children = (
 				C60BE6C6188FA8F400C67BA1 /* worth_it.mp4 */,
-				C69FD206188EE2DC00150019 /* Home@2x.png */,
-				C69FD204188EE0D100150019 /* Hypno@2x.png */,
-				C69FD202188EE0C200150019 /* Time@2x.png */,
 				C69FD1C2188ED88800150019 /* WorthIt-Info.plist */,
 				C69FD1C3188ED88800150019 /* InfoPlist.strings */,
 				C69FD1C6188ED88800150019 /* main.m */,
@@ -357,17 +348,14 @@
 				C6E2B47C18981EF700467CF1 /* brett_pic.jpg in Resources */,
 				93AD1D8D188F7A71001C5236 /* logoblack.png in Resources */,
 				C6E2B47B18981EF700467CF1 /* chris_pic.jpg in Resources */,
-				C69FD207188EE2DC00150019 /* Home@2x.png in Resources */,
 				C69FD1D3188ED88900150019 /* Images.xcassets in Resources */,
 				C69FD1FC188ED9B100150019 /* StoriesViewController.xib in Resources */,
 				C69FD20C188EE33D00150019 /* LocationViewController.xib in Resources */,
 				C69FD1C5188ED88800150019 /* InfoPlist.strings in Resources */,
-				C69FD205188EE0D100150019 /* Hypno@2x.png in Resources */,
 				C69FD201188EDE1900150019 /* HomeViewController.xib in Resources */,
 				C6E2B47D18981EF700467CF1 /* aaron_pic.jpg in Resources */,
 				C69FD215188EE73400150019 /* StoryDetailViewController.xib in Resources */,
 				C60BE6C5188FA17E00C67BA1 /* brett_dog.jpg in Resources */,
-				C69FD203188EE0C200150019 /* Time@2x.png in Resources */,
 				C60BE6C3188FA09D00C67BA1 /* StoryCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

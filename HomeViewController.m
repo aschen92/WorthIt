@@ -46,21 +46,30 @@
 - (IBAction)showStories:(id)sender
 {
     StoriesViewController *svc = [[StoriesViewController alloc] init];
-    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:svc];
+    [[self navigationController] pushViewController:svc animated:YES];
     
-    [self presentViewController:nav animated:YES completion:nil];
 }
 
 - (IBAction)showMap:(id)sender
 {
     LocationViewController *lvc = [[LocationViewController alloc] init];
-    [self presentViewController:lvc animated:YES completion:nil];
+    [[self navigationController] pushViewController:lvc animated:YES];
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [[self navigationController] setNavigationBarHidden:YES];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [[self navigationController] setNavigationBarHidden:NO];
 }
 
 - (void)didReceiveMemoryWarning

@@ -10,7 +10,7 @@
 #import <MediaPlayer/MediaPlayer.h>
 
 
-@interface HomeViewController : UIViewController
+@interface HomeViewController : UIViewController <UINavigationControllerDelegate>
 {
     MPMoviePlayerViewController *player;
 }

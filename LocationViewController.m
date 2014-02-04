@@ -19,10 +19,8 @@
     NSBundle *appBundle = [NSBundle mainBundle];
     self = [super initWithNibName:@"LocationViewController" bundle:appBundle];
     if (self) {
-        UITabBarItem *tbi = [self tabBarItem];
-        [tbi setTitle:@"Locations"];
-        UIImage *i = [UIImage imageNamed:@"Hypno.png"];
-        [tbi setImage:i];
+        UINavigationItem *nav = [self navigationItem];
+        [nav setTitle:@"Story Map"];
         
     }
     return self;

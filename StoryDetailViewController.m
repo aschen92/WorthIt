@@ -18,6 +18,9 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
+        UINavigationItem *nav = [self navigationItem];
+        NSString *title = [[NSString alloc] initWithFormat:@"%@'s Story", [story author]];
+        [nav setTitle:title];
         
     }
     return self;
@@ -29,7 +32,7 @@
     [super viewWillAppear:animated];
     
     
-    [subjectField setText:[NSString stringWithFormat:@"%@'s Worth It Story", [story author]]];
+    //[subjectField setText:[NSString stringWithFormat:@"%@'s Worth It Story", [story author]]];
     [storyTextField setText:[story storyText]];
     [subjectField setFont:[UIFont systemFontOfSize:17.0f]];
 }

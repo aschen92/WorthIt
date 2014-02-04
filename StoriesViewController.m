@@ -27,11 +27,12 @@
     if (self) {
         UINavigationItem *nav = [self navigationItem];
         [nav setTitle:@"Stories"];
+        [[[self navigationController] navigationBar] setHidden:NO];
         
         UIBarButtonItem *bbi = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(done:)];
         
-        [[self navigationItem] setRightBarButtonItem:bbi];
-        [[self navigationItem] setLeftBarButtonItem:[self editButtonItem]];
+        //[[self navigationItem] setRightBarButtonItem:bbi];
+        //[[self navigationItem] setLeftBarButtonItem:[self editButtonItem]];
         
         
     }
@@ -41,9 +42,8 @@
 
 - (void)done:(id)sender
 {
-    // BAD DESIGN AHHH
-    HomeViewController *hvc = [[HomeViewController alloc] init];
-    [self presentViewController:hvc animated:YES completion:nil];
+    // Probably don't need this anymore
+    [[self navigationController] popViewControllerAnimated:YES];
 }
 
 - (void)viewDidLoad
