@@ -37,15 +37,15 @@
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
 	<key>FacebookAppID</key>
-	<string>254369684738964</string>
+	<string>628890217177556</string>
 	<key>FacebookDisplayName</key>
-	<string>seniorAppTest</string>
+	<string>seniorTestApp</string>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>fb254369684738964</string>
+				<string>fb628890217177556</string>
 			</array>
 		</dict>
 	</array>
