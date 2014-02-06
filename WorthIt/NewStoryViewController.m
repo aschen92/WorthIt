@@ -49,6 +49,7 @@
 - (void)save:(id)sender
 {
     [[self presentingViewController] dismissViewControllerAnimated:YES completion:[self dismissBlock]];
+    NSLog(@"%@", [[StoryStore sharedStore] allItems]);
 }
 
 
