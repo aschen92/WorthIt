@@ -68,8 +68,6 @@
 
 - (NSArray *)allItems
 {
-    
-    
     return allItems;
 }
 
@@ -89,7 +87,7 @@
     return sharedStore;
 }
 
-- (void)removeItem:(Story *)s
+- (void)removeStory:(Story *)s
 {
     [allItems removeObjectIdenticalTo:s];
 }
@@ -112,16 +110,6 @@
     return [docDirectory stringByAppendingPathComponent:@"store.data"];
 }
 
-// FIX THIS SO THAT CHANGES ARE SAVED
-//- (BOOL)saveChanges
-//{
-//    NSError *err = nil;
-//    BOOL successful = [context save:&err];
-//    if (!successful) {
-//        NSLog(@"Error saving: %@", [err localizedDescription]);
-//    }
-//    return successful;
-//}
 
 
 

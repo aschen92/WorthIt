@@ -29,6 +29,7 @@
 }
 
 
+
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
@@ -54,23 +55,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (id)initWithNewStory:(BOOL)isNew
-{
-    self = [super initWithNibName:@"StoryDetailViewController" bundle:nil];
-    
-    if (self) {
-        if (isNew) {
-            UIBarButtonItem *doneItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(save:)];
-            [[self navigationItem] setRightBarButtonItem:doneItem];
-            
-            UIBarButtonItem *cancelItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancel:)];
-            
-            [[self navigationItem] setLeftBarButtonItem:cancelItem];
-        }
-    }
-    return self;
-    
-}
 
 - (void)save:(id)sender
 {
@@ -79,7 +63,7 @@
 
 - (void)cancel:(id)sender
 {
-    [[StoryStore sharedStore] removeItem:story];
+    [[StoryStore sharedStore] removeStory:story];
     [[self presentingViewController] dismissViewControllerAnimated:YES completion:dismissBlock];
 }
 

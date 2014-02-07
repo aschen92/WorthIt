@@ -20,7 +20,7 @@
     
 }
 
-- (id)initWithNewStory:(BOOL)isNew;
+
 
 @property (nonatomic, strong) Story *story;
 @property (nonatomic, copy) void (^dismissBlock)(void);

@@ -14,6 +14,8 @@
 @end
 
 @implementation NewStoryViewController
+@synthesize story = _story;
+@synthesize dismissBlock;
 
 #pragma mark - Initialization Stuff
 
@@ -30,6 +32,8 @@
         
         // Wartburg Orange - #FF6F30
         [self.view setBackgroundColor:[UIColor colorWithRed:1 green:0.435 blue:0.188 alpha:1.0]];
+        
+        
     }
     return self;
 }
@@ -40,28 +44,53 @@
     // Do any additional setup after loading the view from its nib.
 }
 
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [[self view] endEditing:YES];
+    
+    
+}
+
 #pragma mark - Button methods
 
 - (void)cancel:(id)sender
 {
-    [[StoryStore sharedStore] removeItem:[self story]];
-    [[self presentingViewController] dismissViewControllerAnimated:YES completion:[self dismissBlock]];
+    [[StoryStore sharedStore] removeStory:[self story]];
+    [[self presentingViewController] dismissViewControllerAnimated:YES completion:dismissBlock];
 }
 
 
 - (void)save:(id)sender
 {
-    [[self presentingViewController] dismissViewControllerAnimated:YES completion:[self dismissBlock]];
+    
+    [_story setSubject:[subjectField text]];
+    [_story setStoryText:[storyText text]];
+    [_story setSubject:[subjectField text]];
+    NSLog(@"%@", [subjectField text]);
+    [_story setAuthor:[nameField text]];
+    // set the creation date with an NSDate object lol
+    
+    // checks to see if the user wants to use their own picture as a display img
+    if ([shouldShowProfilePicture isOn]) {
+        //code to set facebook profile pic as thumbnail
+    } else {
+        // use brett's dog.
+    }
+    
     NSLog(@"%@", [[StoryStore sharedStore] allItems]);
+
+
+    
+    [[self presentingViewController] dismissViewControllerAnimated:YES completion:dismissBlock];
 }
 
 
 #pragma mark - Other stuff
 
-- (void)didReceiveMemoryWarning
+- (void)setStory:(Story *)story
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    _story = story;
 }
 
 // removes the keyboard when the background is tapped.

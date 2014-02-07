@@ -16,7 +16,7 @@
 }
 
 + (StoryStore *)sharedStore;
-- (void)removeItem:(Story *)s;
+- (void)removeStory:(Story *)s;
 //- (void)addItem:(Story *)s;
 
 - (NSArray *)allItems;

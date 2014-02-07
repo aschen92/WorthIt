@@ -17,7 +17,7 @@
 
 
 @implementation StoriesViewController
-@synthesize tableView;
+@synthesize tableView = _tableView;
 
 
 #pragma mark - Set-up stuff
@@ -40,10 +40,11 @@
     return self;
 }
 
-- (void)viewDidLoad
-{
-    
-}
+//- (void)viewWillAppear:(BOOL)animated
+//{
+//    [super viewWillAppear:animated];
+//    [tableView reloadData];
+//}
 
 #pragma mark - Button methods
 
@@ -56,12 +57,18 @@
 - (void)addNewItem:(id)sender
 {
     Story *story = [[StoryStore sharedStore] createStory];
+    
     NewStoryViewController *newStoryViewController = [[NewStoryViewController alloc] init];
+    
+    [newStoryViewController setStory:story];
+    
     [newStoryViewController setDismissBlock:^{
         [[self tableView] reloadData];
     }];
+    
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:newStoryViewController];
     [navController setModalPresentationStyle:UIModalPresentationFormSheet];
+    
     [self presentViewController:navController animated:YES completion:nil];
     
 }
@@ -72,26 +79,24 @@
 - (NSInteger)tableView:(UITableView *)tableView
  numberOfRowsInSection:(NSInteger)section
 {
-//    return [[[StoryStore sharedStore] allItems] count];
+    NSLog(@"%lu", (unsigned long)[[[StoryStore sharedStore] allItems] count]);
     return [[[StoryStore sharedStore] allItems] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"StoryCell";
-    StoryCell *cell = (StoryCell *) [[self tableView] dequeueReusableCellWithIdentifier:CellIdentifier];
+    Story *story = [[[StoryStore sharedStore] allItems]
+                  objectAtIndex:[indexPath row]];
     
-    if (cell == nil) {
-        NSArray *topLevelObjects = [[NSBundle mainBundle] loadNibNamed:@"StoryCell" owner:self options:nil];
-        for (id currentObject in topLevelObjects) {
-            if ([currentObject isKindOfClass:[UITableViewCell class]]) {
-                cell = (StoryCell *)currentObject;
-                break;
-            }
-        }
+    StoryCell *cell = [tableView dequeueReusableCellWithIdentifier:@"StoryCell"];
+    if (!cell) {
+        cell = [[StoryCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"StoryCell"];
     }
+    [cell setController:self];
+    [cell setTableView:tableView];
     
-    Story *story = [[[StoryStore sharedStore] allItems] objectAtIndex:indexPath.row];
+    
+    
     [[cell storySubject] setText:[story subject]];
     [[cell dateLabel] setText:[story datePosted]];
     [[cell profilePicture] setImage:[story thumbnail]];
@@ -104,13 +109,19 @@
 - (void)tableView:(UITableView *)tableView
 didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    StoryDetailViewController *storyDetailViewController = [[StoryDetailViewController alloc] initWithNewStory:NO];
-    
+    StoryDetailViewController *storyDetailViewController = [[StoryDetailViewController alloc] init];
     Story *selectedStory = [[[StoryStore sharedStore] allItems] objectAtIndex:[indexPath row]];
     
     [storyDetailViewController setStory:selectedStory];
     
     [[self navigationController] pushViewController:storyDetailViewController animated:YES];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [[self tableView] reloadData];
+    NSLog(@":P %@", [[StoryStore sharedStore] allItems] );
 }
 
 

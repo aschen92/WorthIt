@@ -19,4 +19,8 @@
 @property (nonatomic, weak) UIImage *thumbnail;
 @property (nonatomic, strong) NSString *author;
 
+- initWithStorySubject:(NSString *)subject;
+
+
+
 @end

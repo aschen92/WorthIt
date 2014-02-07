@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "Story.h"
 
-@interface NewStoryViewController : UIViewController
+@interface NewStoryViewController : UIViewController <UITextFieldDelegate>
 {
     __weak IBOutlet UITextField *nameField;
     __weak IBOutlet UITextField *subjectField;
@@ -22,5 +22,6 @@
 @property (nonatomic, copy) void (^dismissBlock)(void);
 
 - (IBAction)backgroundTapped:(id)sender;
+
 
 @end

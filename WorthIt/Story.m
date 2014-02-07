@@ -11,4 +11,25 @@
 @implementation Story
 @synthesize storyText, subject, thumbnail, datePosted, author;
 
+
+- (NSString *)description
+{
+    NSString *descriptionString = [[NSString alloc] initWithFormat:@"Story subject: %@", subject];
+    return descriptionString;
+}
+
+- (id)initWithStorySubject:(NSString *)subject
+{
+    self = [super init];
+    if (self) {
+        [self setSubject:[self subject]];
+    }
+    return self;
+}
+
+- (id)init
+{
+    return [self initWithStorySubject:@"kitty"];
+}
+
 @end
