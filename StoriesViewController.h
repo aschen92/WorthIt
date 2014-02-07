@@ -11,6 +11,7 @@
 @interface StoriesViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic)
 
 
 - (IBAction)addNewItem:(id)sender;
