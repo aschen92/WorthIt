@@ -16,6 +16,7 @@
 		C60BE6C5188FA17E00C67BA1 /* brett_dog.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C60BE6C4188FA17E00C67BA1 /* brett_dog.jpg */; };
 		C635423818A157D60023FF74 /* NewStoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C635423618A157D60023FF74 /* NewStoryViewController.m */; };
 		C635423918A157D60023FF74 /* NewStoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C635423718A157D60023FF74 /* NewStoryViewController.xib */; };
+		C635423B18A48D0C0023FF74 /* uiimageBground.png in Resources */ = {isa = PBXBuildFile; fileRef = C635423A18A48D0C0023FF74 /* uiimageBground.png */; };
 		C69FD1BB188ED88800150019 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C69FD1BA188ED88800150019 /* Foundation.framework */; };
 		C69FD1BD188ED88800150019 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C69FD1BC188ED88800150019 /* CoreGraphics.framework */; };
 		C69FD1BF188ED88800150019 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C69FD1BE188ED88800150019 /* UIKit.framework */; };
@@ -71,6 +72,7 @@
 		C635423518A157D60023FF74 /* NewStoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewStoryViewController.h; sourceTree = "<group>"; };
 		C635423618A157D60023FF74 /* NewStoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewStoryViewController.m; sourceTree = "<group>"; };
 		C635423718A157D60023FF74 /* NewStoryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewStoryViewController.xib; sourceTree = "<group>"; };
+		C635423A18A48D0C0023FF74 /* uiimageBground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = uiimageBground.png; sourceTree = "<group>"; };
 		C69FD1B7188ED88800150019 /* WorthIt.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorthIt.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C69FD1BA188ED88800150019 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C69FD1BC188ED88800150019 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -261,6 +263,7 @@
 		C6E2B47E18981F0700467CF1 /* Pictures */ = {
 			isa = PBXGroup;
 			children = (
+				C635423A18A48D0C0023FF74 /* uiimageBground.png */,
 				93AD1D8C188F7A71001C5236 /* logoblack.png */,
 				C60BE6C4188FA17E00C67BA1 /* brett_dog.jpg */,
 				C6E2B47F1898202B00467CF1 /* adam_pic.jpg */,
@@ -358,6 +361,7 @@
 				C6E2B47B18981EF700467CF1 /* chris_pic.jpg in Resources */,
 				C69FD1D3188ED88900150019 /* Images.xcassets in Resources */,
 				C69FD1FC188ED9B100150019 /* StoriesViewController.xib in Resources */,
+				C635423B18A48D0C0023FF74 /* uiimageBground.png in Resources */,
 				C69FD20C188EE33D00150019 /* LocationViewController.xib in Resources */,
 				C69FD1C5188ED88800150019 /* InfoPlist.strings in Resources */,
 				C69FD201188EDE1900150019 /* HomeViewController.xib in Resources */,

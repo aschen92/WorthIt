@@ -65,7 +65,7 @@
                 <view contentMode="center" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mw4-1N-Vc0" customClass="FBProfilePictureView">
                     <rect key="frame" x="158" y="236" width="142" height="144"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" red="1" green="0.38823533059999998" blue="0.1647058874" alpha="0.0" colorSpace="deviceRGB"/>
                 </view>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Log in to View Stories" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4hC-Xy-Ng5">
                     <rect key="frame" x="74" y="220" width="172" height="21"/>
