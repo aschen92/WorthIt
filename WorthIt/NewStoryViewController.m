@@ -14,7 +14,8 @@
 @end
 
 @implementation NewStoryViewController
-@synthesize story = _story;
+@synthesize story;
+@synthesize storyIndex;
 @synthesize dismissBlock;
 
 #pragma mark - Initialization Stuff
@@ -23,12 +24,12 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        UIBarButtonItem *doneItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(save:)];
-        [[self navigationItem] setRightBarButtonItem:doneItem];
         
         UIBarButtonItem *cancelItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancel:)];
+        UIBarButtonItem *saveItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(save:)];
         
         [[self navigationItem] setLeftBarButtonItem:cancelItem];
+        [[self navigationItem] setRightBarButtonItem:saveItem];
         
         // Wartburg Orange - #FF6F30
         [self.view setBackgroundColor:[UIColor colorWithRed:1 green:0.435 blue:0.188 alpha:1.0]];
@@ -63,12 +64,13 @@
 
 - (void)save:(id)sender
 {
+    story = [[[StoryStore sharedStore] allItems] objectAtIndex:self.storyIndex];
     
-    [_story setSubject:[subjectField text]];
-    [_story setStoryText:[storyText text]];
-    [_story setSubject:[subjectField text]];
-    NSLog(@"%@", [subjectField text]);
-    [_story setAuthor:[nameField text]];
+    [story setSubject:[subjectField text]];
+    [story setStoryText:[storyText text]];
+    [story setSubject:[subjectField text]];
+    NSLog(@"%@", [story subject]);
+    [story setAuthor:[nameField text]];
     // set the creation date with an NSDate object lol
     
     // checks to see if the user wants to use their own picture as a display img
@@ -88,10 +90,10 @@
 
 #pragma mark - Other stuff
 
-- (void)setStory:(Story *)story
-{
-    _story = story;
-}
+//- (void)setStoryIndex:(NSInteger)storyIndex:
+//{
+//    [self storyIndex] = storyIndex;
+//}
 
 // removes the keyboard when the background is tapped.
 - (IBAction)backgroundTapped:(id)sender

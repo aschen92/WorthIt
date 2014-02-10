@@ -18,8 +18,9 @@
     
 }
 
-@property (nonatomic, strong) Story *story;
+@property (nonatomic) NSInteger storyIndex;
 @property (nonatomic, copy) void (^dismissBlock)(void);
+@property (nonatomic, weak) Story *story;
 
 - (IBAction)backgroundTapped:(id)sender;
 

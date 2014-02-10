@@ -40,19 +40,14 @@
     return self;
 }
 
-//- (void)viewWillAppear:(BOOL)animated
-//{
-//    [super viewWillAppear:animated];
-//    [tableView reloadData];
-//}
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [[self tableView] reloadData];
+}
 
 #pragma mark - Button methods
 
-- (void)done:(id)sender
-{
-    // Probably don't need this anymore
-    [[self navigationController] popViewControllerAnimated:YES];
-}
 
 - (void)addNewItem:(id)sender
 {
@@ -60,7 +55,7 @@
     
     NewStoryViewController *newStoryViewController = [[NewStoryViewController alloc] init];
     
-    [newStoryViewController setStory:story];
+    [newStoryViewController setStoryIndex:[[[StoryStore sharedStore] allItems] indexOfObject:story]];
     
     [newStoryViewController setDismissBlock:^{
         [[self tableView] reloadData];
@@ -92,14 +87,16 @@
     if (!cell) {
         cell = [[StoryCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"StoryCell"];
     }
-    [cell setController:self];
-    [cell setTableView:tableView];
+    
     
     
     
     [[cell storySubject] setText:[story subject]];
     [[cell dateLabel] setText:[story datePosted]];
     [[cell profilePicture] setImage:[story thumbnail]];
+    
+    [cell setController:self];
+    [cell setTableView:tableView];
     
     return cell;
 }
