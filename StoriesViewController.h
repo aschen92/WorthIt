@@ -12,6 +12,7 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) UIRefreshControl *refreshControl;
+@property (strong, nonatomic) UIBarButtonItem *bbi;
 
 
 - (IBAction)addNewItem:(id)sender;

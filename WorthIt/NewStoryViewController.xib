@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NewStoryViewController">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UIControl">
             <connections>
                 <outlet property="locationField" destination="4Wg-FA-M1H" id="qCK-R2-c49"/>
                 <outlet property="nameField" destination="oWM-gr-CGH" id="d0m-Qs-rEg"/>
@@ -43,7 +43,7 @@
                     <rect key="frame" x="20" y="113" width="220" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                     <connections>
                         <outlet property="delegate" destination="-1" id="B4C-XU-oTn"/>
                     </connections>
@@ -52,7 +52,7 @@
                     <rect key="frame" x="20" y="151" width="220" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                     <connections>
                         <outlet property="delegate" destination="-1" id="RtV-iB-jid"/>
                     </connections>
@@ -73,7 +73,7 @@
                     <rect key="frame" x="20" y="189" width="220" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                     <connections>
                         <outlet property="delegate" destination="-1" id="PD0-sz-BEq"/>
                     </connections>

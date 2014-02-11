@@ -80,7 +80,7 @@
 {
     // changes the UI for a logged OUT user
     [self.storyMap setEnabled:NO];
-    [self.storiesButton setEnabled:NO];
+    //[self.storiesButton setEnabled:NO];
     [self.instructionLabel setHidden:NO];
     self.profilePicture.profileID = nil;
 }

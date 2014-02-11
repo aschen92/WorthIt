@@ -51,19 +51,7 @@
     [super viewWillDisappear:animated];
     [[self view] endEditing:YES];
     
-    [story setSubject:[subjectField text]];
-    [story setStoryText:[storyTextField text]];
-    [story setAuthor:[nameField text]];
     
-    
-    // set the creation date with an NSDate object lol
-    
-    // checks to see if the user wants to use their own picture as a display img
-    if ([shouldShowProfilePicture isOn]) {
-        //code to set facebook profile pic as thumbnail
-    } else {
-        // use brett's dog.
-    }
 }
 
 #pragma mark - Button methods
@@ -77,9 +65,25 @@
 
 - (void)save:(id)sender
 {
-    //story = [[[StoryStore sharedStore] allItems] objectAtIndex:self.storyIndex];
+    
+    [story setSubject:[subjectField text]];
+    [story setStoryText:[storyTextField text]];
+    [story setAuthor:[nameField text]];
+    
+    // sets the Story iVar datePosted as today's date.
+    NSDate *today = [[NSDate alloc] initWithTimeIntervalSinceNow:0];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateStyle:NSDateFormatterShortStyle];
+    NSString *dateCreated = [formatter stringFromDate:today];
+    [story setDatePosted:dateCreated];
     
     
+    // checks to see if the user wants to use their own picture as a display img
+    if ([shouldShowProfilePicture isOn]) {
+        //code to set facebook profile pic as thumbnail
+    } else {
+        [story setThumbnail:[UIImage imageNamed:@"brett_dog.jpg"]];
+    }
 
 
     

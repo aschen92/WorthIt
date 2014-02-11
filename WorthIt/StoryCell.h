@@ -12,6 +12,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *storySubject;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *profilePicture;
+@property (weak, nonatomic) IBOutlet UILabel *authorLabel;
 
 
 

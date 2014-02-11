@@ -14,10 +14,12 @@
 #import "Story.h"
 #import "NewStoryViewController.h"
 
-
+@interface StoriesViewController () <FBLoginViewDelegate>
+@end
 
 @implementation StoriesViewController
 @synthesize tableView = _tableView;
+@synthesize bbi;
 
 
 #pragma mark - Set-up stuff
@@ -30,7 +32,7 @@
         [nav setTitle:@"Stories"];
         [[[self navigationController] navigationBar] setHidden:NO];
         
-        UIBarButtonItem *bbi = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addNewItem:)];
+        bbi = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addNewItem:)];
         
         [[self navigationItem] setRightBarButtonItem:bbi];
         //[[self navigationItem] setLeftBarButtonItem:[self editButtonItem]];
@@ -39,6 +41,12 @@
     
     return self;
 }
+
+- (void)loginViewShowingLoggedOutUser:(FBLoginView *)loginView
+{
+    bbi.enabled = NO;
+}
+
 
 #pragma mark - Button methods
 
@@ -88,7 +96,9 @@
         }
     }
     
+    NSString *author = [[NSString alloc] initWithFormat:@"Shared by: %@", [story author]];
     
+    [[cell authorLabel] setText:author];
     [[cell storySubject] setText:[story subject]];
     [[cell dateLabel] setText:[story datePosted]];
     [[cell profilePicture] setImage:[story thumbnail]];
@@ -104,7 +114,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self.tableView reloadData];
     
     self.refreshControl = [[UIRefreshControl alloc] init];
     [self.refreshControl addTarget:self action:@selector(refreshInvoked:forState:) forControlEvents:UIControlEventValueChanged];
@@ -117,6 +126,11 @@
     [self.refreshControl endRefreshing];
 }
 
+- (void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:YES];
+    [self.tableView reloadData];
+}
 
 
 - (void)tableView:(UITableView *)tableView
@@ -132,7 +146,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 66;
+    return 78;
 }
 
 
