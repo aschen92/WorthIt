@@ -40,12 +40,6 @@
     return self;
 }
 
-- (void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-    [[self tableView] reloadData];
-}
-
 #pragma mark - Button methods
 
 
@@ -73,9 +67,7 @@
 - (NSInteger)tableView:(UITableView *)tableView
  numberOfRowsInSection:(NSInteger)section
 {
-
     return [[[StoryStore sharedStore] allItems] count];
-    
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -109,6 +101,24 @@
 
 #pragma mark - Optional overrides
 
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    [self.tableView reloadData];
+    
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    [self.refreshControl addTarget:self action:@selector(refreshInvoked:forState:) forControlEvents:UIControlEventValueChanged];
+    [self.tableView addSubview:self.refreshControl];
+}
+
+- (void)refreshInvoked:(id)sender forState:(UIControlState)state
+{
+    [self.tableView reloadData];
+    [self.refreshControl endRefreshing];
+}
+
+
+
 - (void)tableView:(UITableView *)tableView
 didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -123,19 +133,6 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 66;
-}
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    NSLog(@":P %@", [[StoryStore sharedStore] allItems] );
-}
-
-- (void)viewDidAppear:(BOOL)animated
-{
-    [super viewDidAppear:animated];
-    [[self tableView] reloadData];
-    
 }
 
 
