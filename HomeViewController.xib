@@ -19,9 +19,9 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Worth It" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="145" translatesAutoresizingMaskIntoConstraints="NO" id="Qc4-L5-RUn">
-                    <rect key="frame" x="88" y="461" width="145" height="87"/>
+                    <rect key="frame" x="88" y="119" width="145" height="45"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="38"/>
+                    <fontDescription key="fontDescription" name="BodoniSvtyTwoOSITCTT-Book" family="Bodoni 72 Oldstyle" pointSize="44"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -48,7 +48,7 @@
                     </connections>
                 </button>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logoblack.png" translatesAutoresizingMaskIntoConstraints="NO" id="mof-1F-RKX">
-                    <rect key="frame" x="20" y="20" width="195" height="75"/>
+                    <rect key="frame" x="20" y="20" width="280" height="91"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lfg-ik-UDr">
@@ -63,12 +63,12 @@
                     </connections>
                 </button>
                 <view contentMode="center" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mw4-1N-Vc0" customClass="FBProfilePictureView">
-                    <rect key="frame" x="158" y="236" width="142" height="144"/>
+                    <rect key="frame" x="164" y="276" width="123" height="118"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="1" green="0.38823533059999998" blue="0.1647058874" alpha="0.0" colorSpace="deviceRGB"/>
                 </view>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Log in to View Stories" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4hC-Xy-Ng5">
-                    <rect key="frame" x="74" y="220" width="172" height="21"/>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Log in to View the Story Map" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4hC-Xy-Ng5">
+                    <rect key="frame" x="49" y="209" width="222" height="21"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>

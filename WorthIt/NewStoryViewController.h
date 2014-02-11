@@ -17,12 +17,13 @@
 @property (weak, nonatomic) IBOutlet UITextField *locationField;
 @property (weak, nonatomic) IBOutlet UISwitch *shouldShowProfilePicture;
 @property (weak, nonatomic) IBOutlet UITextView *storyTextField;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
-
-@property (nonatomic) NSInteger storyIndex;
 @property (nonatomic, copy) void (^dismissBlock)(void);
 @property (nonatomic, weak) Story *story;
 
+
+//broken due to uiscrollview
 - (IBAction)backgroundTapped:(id)sender;
 
 

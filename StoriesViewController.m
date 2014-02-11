@@ -13,6 +13,7 @@
 #import "StoryStore.h"
 #import "Story.h"
 #import "NewStoryViewController.h"
+#import <FacebookSDK/FacebookSDK.h>
 
 @interface StoriesViewController () <FBLoginViewDelegate>
 @end
@@ -36,6 +37,11 @@
         
         [[self navigationItem] setRightBarButtonItem:bbi];
         //[[self navigationItem] setLeftBarButtonItem:[self editButtonItem]];
+        if (!FBSession.activeSession.isOpen) {
+            nav.rightBarButtonItem.enabled = NO;
+        }
+        
+        
         
     }
     
@@ -44,7 +50,7 @@
 
 - (void)loginViewShowingLoggedOutUser:(FBLoginView *)loginView
 {
-    bbi.enabled = NO;
+    self.navigationController.navigationItem.rightBarButtonItem.enabled = NO;
 }
 
 
@@ -118,6 +124,14 @@
     self.refreshControl = [[UIRefreshControl alloc] init];
     [self.refreshControl addTarget:self action:@selector(refreshInvoked:forState:) forControlEvents:UIControlEventValueChanged];
     [self.tableView addSubview:self.refreshControl];
+    
+    // removes the background formatting and sets color
+    self.tableView.backgroundView = nil;
+    self.tableView.backgroundColor = [UIColor colorWithRed:1 green:0.435 blue:0.188 alpha:1.0];
+    self.tableView.separatorColor = [UIColor blackColor];
+    
+    // removes the separators from blank cells
+    self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
 }
 
 - (void)refreshInvoked:(id)sender forState:(UIControlState)state
@@ -130,6 +144,12 @@
 {
     [super viewDidDisappear:YES];
     [self.tableView reloadData];
+}
+
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UIColor *color = [UIColor colorWithRed:1 green:0.435 blue:0.188 alpha:1.0];
+    cell.backgroundColor = color;
 }
 
 

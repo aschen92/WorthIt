@@ -32,14 +32,12 @@
         [self.view addSubview:loginView];
         
         // chooses where the login button is displayed
-        loginView.frame = CGRectOffset(loginView.frame, (self.view.center.x - (loginView.frame.size.width / 2)), (self.view.center.y - 150));
+        loginView.frame = CGRectOffset(loginView.frame, (self.view.center.x - (loginView.frame.size.width / 2)), (self.view.center.y + 190));
         
         // disabling the storyMap/stories buttons
         [self.storyMap setEnabled:NO];
-        [self.storiesButton setEnabled:NO];
         
-        // Wartburg Orange - #FF6F30
-        [self.view setBackgroundColor:[UIColor colorWithRed:1 green:0.435 blue:0.188 alpha:1.0]];
+        
         
     }
     return self;
@@ -70,7 +68,6 @@
 {
     // changes the UI for a logged IN user
     [self.storyMap setEnabled:YES];
-    [self.storiesButton setEnabled:YES];
     [self.instructionLabel setHidden:YES];
     
 
@@ -80,7 +77,6 @@
 {
     // changes the UI for a logged OUT user
     [self.storyMap setEnabled:NO];
-    //[self.storiesButton setEnabled:NO];
     [self.instructionLabel setHidden:NO];
     self.profilePicture.profileID = nil;
 }
@@ -161,7 +157,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    // Wartburg Orange - #FF6F30
+    [self.view setBackgroundColor:[UIColor colorWithRed:1 green:0.435 blue:0.188 alpha:1.0]];
 }
 
 - (void)viewWillAppear:(BOOL)animated

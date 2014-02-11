@@ -14,8 +14,7 @@
 @end
 
 @implementation NewStoryViewController
-@synthesize story;
-@synthesize storyIndex;
+@synthesize story, scrollView;
 @synthesize dismissBlock;
 @synthesize nameField, subjectField, locationField, shouldShowProfilePicture, storyTextField;
 
@@ -93,10 +92,14 @@
 
 #pragma mark - Other stuff
 
-//- (void)setStoryIndex:(NSInteger)storyIndex:
-//{
-//    [self storyIndex] = storyIndex;
-//}
+- (void)textFieldDidBeginEditing:(UITextField *)textField {
+    CGPoint scrollPoint = CGPointMake(0, textField.frame.origin.y);
+    [scrollView setContentOffset:scrollPoint animated:YES];
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField {
+    [scrollView setContentOffset:CGPointZero animated:YES];
+}
 
 // removes the keyboard when the background is tapped.
 - (IBAction)backgroundTapped:(id)sender
