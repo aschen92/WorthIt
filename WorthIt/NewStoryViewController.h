@@ -10,20 +10,18 @@
 #import "Story.h"
 
 @interface NewStoryViewController : UIViewController <UITextFieldDelegate>
-{
-    
-    __weak IBOutlet UITextField *nameField;
-    __weak IBOutlet UITextField *subjectField;
-    __weak IBOutlet UITextField *locationField;
-    __weak IBOutlet UISwitch *shouldShowProfilePicture;
-    __weak IBOutlet UITextView *storyTextField;
-    
-}
+
+
+@property (weak, nonatomic) IBOutlet UITextField *nameField;
+@property (weak, nonatomic) IBOutlet UITextField *subjectField;
+@property (weak, nonatomic) IBOutlet UITextField *locationField;
+@property (weak, nonatomic) IBOutlet UISwitch *shouldShowProfilePicture;
+@property (weak, nonatomic) IBOutlet UITextView *storyTextField;
+
 
 @property (nonatomic) NSInteger storyIndex;
 @property (nonatomic, copy) void (^dismissBlock)(void);
 @property (nonatomic, weak) Story *story;
-@property (nonatomic, weak) IBOutlet UITextField *subjectField;
 
 - (IBAction)backgroundTapped:(id)sender;
 

@@ -10,13 +10,13 @@
 
 @interface Story : NSObject
 
-@property (nonatomic, weak) NSString *storyText;
-@property (nonatomic, weak) NSString *subject;
+@property (nonatomic, strong) NSString *storyText;
+@property (nonatomic, strong) NSString *subject;
 
 // should be a NSDate
-@property (nonatomic, weak) NSString *datePosted;
+@property (nonatomic, strong) NSString *datePosted;
 
-@property (nonatomic, weak) UIImage *thumbnail;
+@property (nonatomic, strong) UIImage *thumbnail;
 @property (nonatomic, strong) NSString *author;
 
 - initWithStorySubject:(NSString *)subject;

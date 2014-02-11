@@ -17,7 +17,7 @@
 @synthesize story;
 @synthesize storyIndex;
 @synthesize dismissBlock;
-@synthesize subjectField;
+@synthesize nameField, subjectField, locationField, shouldShowProfilePicture, storyTextField;
 
 #pragma mark - Initialization Stuff
 
@@ -51,7 +51,19 @@
     [super viewWillDisappear:animated];
     [[self view] endEditing:YES];
     
+    [story setSubject:[subjectField text]];
+    [story setStoryText:[storyTextField text]];
+    [story setAuthor:[nameField text]];
     
+    
+    // set the creation date with an NSDate object lol
+    
+    // checks to see if the user wants to use their own picture as a display img
+    if ([shouldShowProfilePicture isOn]) {
+        //code to set facebook profile pic as thumbnail
+    } else {
+        // use brett's dog.
+    }
 }
 
 #pragma mark - Button methods
@@ -67,20 +79,7 @@
 {
     //story = [[[StoryStore sharedStore] allItems] objectAtIndex:self.storyIndex];
     
-    NSString *subject = [storyTextField text];
-    [story setSubject:subject];    //[subjectField text]];
-    [story setStoryText:[storyTextField text]];
-    [story setAuthor:[nameField text]];
     
-    
-    // set the creation date with an NSDate object lol
-    
-    // checks to see if the user wants to use their own picture as a display img
-    if ([shouldShowProfilePicture isOn]) {
-        //code to set facebook profile pic as thumbnail
-    } else {
-        // use brett's dog.
-    }
 
 
     
