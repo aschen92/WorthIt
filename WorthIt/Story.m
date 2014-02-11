@@ -14,7 +14,7 @@
 
 - (NSString *)description
 {
-    NSString *descriptionString = [[NSString alloc] initWithFormat:@"Story subject: %@", subject];
+    NSString *descriptionString = [[NSString alloc] initWithFormat:@"Story subject: %@ AUTHOR: %@", subject, author];
     return descriptionString;
 }
 

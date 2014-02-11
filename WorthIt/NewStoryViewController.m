@@ -17,6 +17,7 @@
 @synthesize story;
 @synthesize storyIndex;
 @synthesize dismissBlock;
+@synthesize subjectField;
 
 #pragma mark - Initialization Stuff
 
@@ -64,13 +65,14 @@
 
 - (void)save:(id)sender
 {
-    story = [[[StoryStore sharedStore] allItems] objectAtIndex:self.storyIndex];
+    //story = [[[StoryStore sharedStore] allItems] objectAtIndex:self.storyIndex];
     
-    [story setSubject:[subjectField text]];
-    [story setStoryText:[storyText text]];
-    [story setSubject:[subjectField text]];
-    NSLog(@"%@", [story subject]);
+    NSString *subject = [storyTextField text];
+    [story setSubject:subject];    //[subjectField text]];
+    [story setStoryText:[storyTextField text]];
     [story setAuthor:[nameField text]];
+    
+    
     // set the creation date with an NSDate object lol
     
     // checks to see if the user wants to use their own picture as a display img
@@ -79,8 +81,6 @@
     } else {
         // use brett's dog.
     }
-    
-    NSLog(@"%@", [[StoryStore sharedStore] allItems]);
 
 
     

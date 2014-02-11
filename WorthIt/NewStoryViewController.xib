@@ -6,15 +6,16 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NewStoryViewController">
             <connections>
-                <outlet property="nameField" destination="oWM-gr-CGH" id="3aD-y8-rfw"/>
-                <outlet property="shouldShowProfilePicture" destination="Eaw-Ou-eIQ" id="moV-jP-71S"/>
-                <outlet property="storyText" destination="Jwh-AH-Na6" id="GaZ-29-iFY"/>
-                <outlet property="subjectField" destination="eMm-1w-Tr0" id="Ap4-Ze-4Rq"/>
-                <outlet property="view" destination="1" id="3"/>
+                <outlet property="locationField" destination="4Wg-FA-M1H" id="cJ8-j7-A5e"/>
+                <outlet property="nameField" destination="oWM-gr-CGH" id="fj8-cf-MUC"/>
+                <outlet property="shouldShowProfilePicture" destination="Eaw-Ou-eIQ" id="oMU-Dq-Oe3"/>
+                <outlet property="storyTextField" destination="Jwh-AH-Na6" id="Cvr-5A-ftn"/>
+                <outlet property="subjectField" destination="eMm-1w-Tr0" id="Ojo-lj-G3y"/>
+                <outlet property="view" destination="1" id="Lca-Lp-xlP"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="1" customClass="UIControl">
+        <view contentMode="scaleToFill" id="1">
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>

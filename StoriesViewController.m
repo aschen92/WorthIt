@@ -55,8 +55,7 @@
     
     NewStoryViewController *newStoryViewController = [[NewStoryViewController alloc] init];
     
-    [newStoryViewController setStoryIndex:[[[StoryStore sharedStore] allItems] indexOfObject:story]];
-    
+    [newStoryViewController setStory:story];
     [newStoryViewController setDismissBlock:^{
         [[self tableView] reloadData];
     }];
@@ -74,8 +73,9 @@
 - (NSInteger)tableView:(UITableView *)tableView
  numberOfRowsInSection:(NSInteger)section
 {
-    NSLog(@"%lu", (unsigned long)[[[StoryStore sharedStore] allItems] count]);
+
     return [[[StoryStore sharedStore] allItems] count];
+    
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -83,12 +83,18 @@
     Story *story = [[[StoryStore sharedStore] allItems]
                   objectAtIndex:[indexPath row]];
     
-    StoryCell *cell = [tableView dequeueReusableCellWithIdentifier:@"StoryCell"];
+    
+    NSString *uniqueIdentifier = @"StoryCell";
+    StoryCell *cell = nil;
+    cell = (StoryCell *) [self.tableView dequeueReusableCellWithIdentifier:uniqueIdentifier];
     if (!cell) {
-        cell = [[StoryCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"StoryCell"];
+        NSArray *topLevelObjects = [[NSBundle mainBundle] loadNibNamed:@"StoryCell" owner:nil options:nil];
+        for (id currentObject in topLevelObjects)
+        {
+            cell = (StoryCell *)currentObject;
+            break;
+        }
     }
-    
-    
     
     
     [[cell storySubject] setText:[story subject]];
@@ -114,11 +120,22 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
     [[self navigationController] pushViewController:storyDetailViewController animated:YES];
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 66;
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    NSLog(@":P %@", [[StoryStore sharedStore] allItems] );
+}
+
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
     [[self tableView] reloadData];
-    NSLog(@":P %@", [[StoryStore sharedStore] allItems] );
+    
 }
 
 
