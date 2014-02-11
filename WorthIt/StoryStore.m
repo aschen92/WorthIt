@@ -32,7 +32,7 @@
             [story1 setThumbnail:[UIImage imageNamed:@"aaron_pic.jpg"]];
             
             Story *story2 = [[Story alloc] init];
-            [story2 setStoryText:@"Dr. Zelle's Story Text"];
+            [story2 setStoryText:@"Adam's Story Text"];
             [story2 setSubject:@"Wartburg Track and Field"];
             [story2 setDatePosted:@"1/25/14"];
             [story2 setAuthor:@"Adam Kucera"];

@@ -23,8 +23,6 @@
 @property (nonatomic, weak) Story *story;
 
 
-//broken due to uiscrollview
-- (IBAction)backgroundTapped:(id)sender;
-
+- (void)dismissKeyboard;
 
 @end

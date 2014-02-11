@@ -11,15 +11,10 @@
 @class Story;
 
 @interface StoryDetailViewController : UIViewController <UINavigationControllerDelegate, UITextFieldDelegate>
-{
-    
-    __weak IBOutlet UITextView *storyTextField;
-    __weak IBOutlet UILabel *subjectField;
-    
-    
-    
-}
 
+
+@property (weak, nonatomic) IBOutlet UILabel *subjectField;
+@property (weak, nonatomic) IBOutlet UITextView *storyTextField;
 
 
 @property (nonatomic, strong) Story *story;

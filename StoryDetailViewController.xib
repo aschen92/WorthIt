@@ -6,18 +6,18 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StoryDetailViewController">
             <connections>
-                <outlet property="storyTextField" destination="fYB-R5-F9J" id="N14-fM-AZr"/>
-                <outlet property="subjectField" destination="Lyr-ZQ-WAI" id="R9F-Mp-eRm"/>
+                <outlet property="storyTextField" destination="fYB-R5-F9J" id="mnl-o9-ajB"/>
+                <outlet property="subjectField" destination="Lyr-ZQ-WAI" id="umB-ie-weh"/>
                 <outlet property="view" destination="1" id="3"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="1">
-            <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" fixedFrame="YES" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fYB-R5-F9J">
-                    <rect key="frame" x="20" y="89" width="280" height="352"/>
+                    <rect key="frame" x="20" y="89" width="280" height="416"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <string key="text">My experience at Wartburg College allowed me to succeed in ways that I never though possible. I had one professor that was willing to offer extra help whenever I needed it. The staff in the business office allowed me to actually figure out my loans so that I could pay it off in a timely manner.</string>
@@ -33,7 +33,6 @@
             </subviews>
             <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
-            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>
     </objects>

@@ -35,14 +35,26 @@
         [self.view setBackgroundColor:[UIColor colorWithRed:1 green:0.435 blue:0.188 alpha:1.0]];
         
         
+        
     }
     return self;
 }
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    // recognizes when background is tapped and calls dismissKeyboard
+    UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
+    [self.view addGestureRecognizer:gestureRecognizer];
+}
+
+
+
+- (void)dismissKeyboard
+{
+    [self.nameField resignFirstResponder];
+    [self.subjectField resignFirstResponder];
+    [self.locationField resignFirstResponder];
+    [self.storyTextField resignFirstResponder];
 }
 
 - (void)viewWillDisappear:(BOOL)animated

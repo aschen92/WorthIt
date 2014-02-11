@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UIControl">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NewStoryViewController">
             <connections>
                 <outlet property="locationField" destination="4Wg-FA-M1H" id="qCK-R2-c49"/>
                 <outlet property="nameField" destination="oWM-gr-CGH" id="d0m-Qs-rEg"/>
@@ -80,11 +80,18 @@
                 </textField>
             </subviews>
             <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+            <gestureRecognizers/>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
             <connections>
-                <action selector="backgroundTapped:" destination="-1" eventType="touchUpInside" id="MfZ-VR-cff"/>
+                <outletCollection property="gestureRecognizers" destination="yFW-lt-q8h" appends="YES" id="JSN-FS-DW1"/>
             </connections>
         </view>
+        <tapGestureRecognizer id="yFW-lt-q8h">
+            <connections>
+                <action selector="tap:" destination="-1" id="qXd-Kg-aPN"/>
+                <outlet property="delegate" destination="1" id="Nd5-Yi-XMo"/>
+            </connections>
+        </tapGestureRecognizer>
     </objects>
 </document>

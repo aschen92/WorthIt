@@ -12,6 +12,7 @@
 
 @implementation StoryDetailViewController
 @synthesize story, dismissBlock;
+@synthesize subjectField, storyTextField;
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -19,12 +20,13 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         UINavigationItem *nav = [self navigationItem];
-        NSString *title = [[NSString alloc] initWithFormat:@"%@'s Story", [story author]];
+        NSString *title = [[NSString alloc] initWithFormat:@"%@'s Story", [self.story author]];
         [nav setTitle:title];
         
         // Wartburg Orange - #FF6F30
         [self.view setBackgroundColor:[UIColor colorWithRed:1 green:0.435 blue:0.188 alpha:1.0]];
     }
+    self.storyTextField.backgroundColor = [UIColor colorWithRed:1 green:0.435 blue:0.188 alpha:1.0];
     return self;
 }
 
@@ -35,9 +37,11 @@
     [super viewWillAppear:animated];
     
     
-    //[subjectField setText:[NSString stringWithFormat:@"%@'s Worth It Story", [story author]]];
-    [storyTextField setText:[story storyText]];
-    [subjectField setFont:[UIFont systemFontOfSize:17.0f]];
+    [self.subjectField setText:[NSString stringWithFormat:@"%@", [story subject]]];
+    [self.storyTextField setText:[story storyText]];
+    [self.subjectField setFont:[UIFont systemFontOfSize:17.0f]];
+    NSString *title = [[NSString alloc] initWithFormat:@"%@'s Story", [self.story author]];
+    [self.navigationItem setTitle:title];
 }
 
 - (void)viewDidLoad

@@ -21,6 +21,7 @@
 @implementation StoriesViewController
 @synthesize tableView = _tableView;
 @synthesize bbi;
+@synthesize numOfStories;
 
 
 #pragma mark - Set-up stuff
@@ -81,7 +82,7 @@
 - (NSInteger)tableView:(UITableView *)tableView
  numberOfRowsInSection:(NSInteger)section
 {
-    return [[[StoryStore sharedStore] allItems] count];
+    return self.numOfStories;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -132,6 +133,12 @@
     
     // removes the separators from blank cells
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    // not the right place to put this but viewDidLoad isn't either
+    self.numOfStories = [[[StoryStore sharedStore] allItems] count];
 }
 
 - (void)refreshInvoked:(id)sender forState:(UIControlState)state
