@@ -11,6 +11,7 @@
 #import "StoryDetailViewController.h"
 #import "LocationViewController.h"
 #import <FacebookSDK/FacebookSDK.h>
+#import <Parse/Parse.h>
 
 @interface HomeViewController () <FBLoginViewDelegate>
 

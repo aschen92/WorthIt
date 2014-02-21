@@ -8,6 +8,7 @@
 
 #import "StoryStore.h"
 #import "Story.h"
+#import <Parse/Parse.h>
 
 
 @implementation StoryStore

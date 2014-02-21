@@ -34,3 +34,9 @@
 }
 
 @end
+
+
+// not sure what to do with this
+//PFObject *testObject = [PFObject objectWithClassName:@"TestObject"];
+//testObject[@"foo"] = @"bar";
+//[testObject saveInBackground];
