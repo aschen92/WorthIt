@@ -14,6 +14,7 @@
 @interface StoryStore : NSObject
 {
     NSMutableArray *allItems;
+    PFObject *ItemList;
 }
 
 + (StoryStore *)sharedStore;

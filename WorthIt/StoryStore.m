@@ -13,6 +13,7 @@
 
 @implementation StoryStore
 
+
 #pragma mark - Init overriding
 
 - (id)init
@@ -39,6 +40,7 @@
             [story2 setThumbnail:[UIImage imageNamed:@"adam_pic.jpg"]];
             
             allItems = [[NSMutableArray alloc] initWithObjects:story1, story2, nil];
+            ItemList = [PFObject objectWithClassName:@"ItemList"];
             
         }
     }
@@ -61,12 +63,19 @@
 {
     Story *s = [[Story alloc] init];
     [allItems addObject:s];
+    ItemList[@"itemList"] = allItems;
     return s;
+}
+
+- (void)removeStory:(Story *)s
+{
+    [allItems removeObjectIdenticalTo:s];
+    ItemList[@"itemList"] = allItems;
 }
 
 - (void)saveChanges
 {
-    
+    [ItemList saveInBackground];
 }
 
 + (StoryStore *)sharedStore
@@ -75,13 +84,7 @@
     if (!sharedStore) {
         sharedStore = [[super allocWithZone:nil] init];
     }
-    PStoryStore[@"sharedStore"] = sharedStore;
     return sharedStore;
-}
-
-- (void)removeStory:(Story *)s
-{
-    [allItems removeObjectIdenticalTo:s];
 }
 
 - (void)moveItemAtIndex:(int)from toIndex:(int)to
@@ -101,9 +104,6 @@
     NSString *docDirectory = [documentDirectories objectAtIndex:0];
     return [docDirectory stringByAppendingPathComponent:@"store.data"];
 }
-
-
-
 
 
 

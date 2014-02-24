@@ -96,7 +96,7 @@
         [story setThumbnail:[UIImage imageNamed:@"brett_dog.jpg"]];
     }
 
-
+    [[StoryStore sharedStore] saveChanges];
     
     [[self presentingViewController] dismissViewControllerAnimated:YES completion:dismissBlock];
 }
