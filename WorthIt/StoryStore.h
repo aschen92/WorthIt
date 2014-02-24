@@ -17,6 +17,7 @@
 }
 
 + (StoryStore *)sharedStore;
+
 - (void)removeStory:(Story *)s;
 //- (void)addItem:(Story *)s;
 
@@ -26,6 +27,7 @@
                 toIndex:(int)to;
 - (NSString *)itemArchivePath;
 
-- (BOOL)saveChanges;
+
+- (void)saveChanges;
 
 @end

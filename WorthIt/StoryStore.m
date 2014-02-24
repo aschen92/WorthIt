@@ -19,8 +19,7 @@
 {
     self = [super init];
     if (self) {
-        NSString *path = [self itemArchivePath];
-        allItems = [NSKeyedUnarchiver unarchiveObjectWithFile:path];
+        
         
         if (!allItems) {
             //allItems = [[NSMutableArray alloc] init];
@@ -39,21 +38,7 @@
             [story2 setAuthor:@"Adam Kucera"];
             [story2 setThumbnail:[UIImage imageNamed:@"adam_pic.jpg"]];
             
-            Story *story3 = [[Story alloc] init];
-            [story3 setStoryText:@"Brett's Story Text"];
-            [story3 setSubject:@"Financial Aid Packages"];
-            [story3 setDatePosted:@"1/28/14"];
-            [story3 setAuthor:@"Brett Peterson"];
-            [story3 setThumbnail:[UIImage imageNamed:@"brett_pic.jpg"]];
-            
-            Story *story4 = [[Story alloc] init];
-            [story4 setStoryText:@"Chris' Story Text"];
-            [story4 setSubject:@"Mensa Food"];
-            [story4 setDatePosted:@"1/30/14"];
-            [story4 setAuthor:@"Chris Smith"];
-            [story4 setThumbnail:[UIImage imageNamed:@"chris_pic.jpg"]];
-            
-            allItems = [[NSMutableArray alloc] initWithObjects:story1, story2, story3, story4, nil];
+            allItems = [[NSMutableArray alloc] initWithObjects:story1, story2, nil];
             
         }
     }
@@ -79,12 +64,18 @@
     return s;
 }
 
+- (void)saveChanges
+{
+    
+}
+
 + (StoryStore *)sharedStore
 {
     static StoryStore *sharedStore = nil;
     if (!sharedStore) {
         sharedStore = [[super allocWithZone:nil] init];
     }
+    PStoryStore[@"sharedStore"] = sharedStore;
     return sharedStore;
 }
 
