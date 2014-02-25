@@ -94,13 +94,13 @@
 - (void)retrieveStories
 {
     PFQuery *query = [PFQuery queryWithClassName:@"ItemList"];
-    [query getObjectInBackgroundWithId:@"7UoZHdMSnQ" block:^(PFObject *itemList, NSError *error) {
+    [query getObjectInBackgroundWithId:@"ixyol9mOY8" block:^(PFObject *itemList, NSError *error) {
         //do something with the itemList
-        NSLog(@"%@", itemList);
+        NSLog(@"%@ doggie", itemList);
     }];
     NSMutableArray *storyDictList = ItemList[@"itemList"];
     NSMutableArray *storyList = [[NSMutableArray alloc] init];
-    
+    NSLog(@"%@ kitty", storyDictList);
     for (Story *story in storyDictList) {
         Story *s = [[StoryStore sharedStore] createStory];
         s.author = [story valueForKey:@"author"];

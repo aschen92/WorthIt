@@ -141,7 +141,7 @@
     // not the right place to put this but viewDidLoad isn't either
     self.numOfStories = [[[StoryStore sharedStore] allItems] count];
     
-    //[[StoryStore sharedStore] retrieveStories];
+    [[StoryStore sharedStore] retrieveStories];
 }
 
 - (void)refreshInvoked:(id)sender forState:(UIControlState)state
