@@ -18,25 +18,33 @@
     return descriptionString;
 }
 
-- (id)initWithStorySubject:(NSString *)subject
+- (id)init
 {
     self = [super init];
     if (self) {
-        [self setSubject:[self subject]];
+        NSArray *keys = @[@"storyText", @"subject", @"datePosted", @"author"];
+        NSArray *values = @[@"foobar", @"foobar", @"foobar", @"foobar"];
+        storyDictionary = [[NSMutableDictionary alloc] initWithObjects:values forKeys:keys];
     }
     return self;
 }
 
 
-- (id)init
+
+- (void)updateDict
 {
-    return [self initWithStorySubject:@"kitty"];
+    [self.dictionaryRepr setObject:self.storyText forKey:@"storyText"];
+    [self.dictionaryRepr setObject:self.subject forKey:@"subject"];
+    [self.dictionaryRepr setObject:self.datePosted forKey:@"datePosted"];
+    [self.dictionaryRepr setObject:self.author forKey:@"author"];
+}
+
+
+
+- (NSMutableDictionary *)dictionaryRepr
+{
+    return storyDictionary;
 }
 
 @end
 
-
-// not sure what to do with this
-//PFObject *testObject = [PFObject objectWithClassName:@"TestObject"];
-//testObject[@"foo"] = @"bar";
-//[testObject saveInBackground];

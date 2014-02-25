@@ -14,6 +14,7 @@
 #import "Story.h"
 #import "NewStoryViewController.h"
 #import <FacebookSDK/FacebookSDK.h>
+#import <Parse/Parse.h>
 
 @interface StoriesViewController () <FBLoginViewDelegate>
 @end
@@ -41,9 +42,6 @@
         if (!FBSession.activeSession.isOpen) {
             nav.rightBarButtonItem.enabled = NO;
         }
-        
-        
-        
     }
     
     return self;
@@ -133,12 +131,17 @@
     
     // removes the separators from blank cells
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+    
+    
+
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     // not the right place to put this but viewDidLoad isn't either
     self.numOfStories = [[[StoryStore sharedStore] allItems] count];
+    
+    //[[StoryStore sharedStore] retrieveStories];
 }
 
 - (void)refreshInvoked:(id)sender forState:(UIControlState)state

@@ -7,8 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+//#import "JSONModel.h"
 
 @interface Story : NSObject
+{
+    NSMutableDictionary *storyDictionary;
+}
 
 @property (nonatomic, strong) NSString *storyText;
 @property (nonatomic, strong) NSString *subject;
@@ -19,7 +23,10 @@
 @property (nonatomic, strong) UIImage *thumbnail;
 @property (nonatomic, strong) NSString *author;
 
-- initWithStorySubject:(NSString *)subject;
+//- initWithStorySubject:(NSString *)subject;
+
+- (NSMutableDictionary *)dictionaryRepr;
+- (void)updateDict;
 
 
 

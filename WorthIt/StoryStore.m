@@ -26,7 +26,7 @@
             //allItems = [[NSMutableArray alloc] init];
             Story *story1 = [[Story alloc] init];
             NSString *aaronsStory = @"My experience at Wartburg College allowed me to succeed in ways that I never though possible. I had one professor that was willing to offer extra help whenever I needed it. The staff in the business office allowed me to actually figure out my loans so that I could pay it off in a timely manner.";
-            [story1 setStoryText:aaronsStory];
+            [story1 setStoryText:@"trollololol"];
             [story1 setSubject:@"Wartburg Choir"];
             [story1 setDatePosted:@"1/20/14"];
             [story1 setAuthor:@"Aaron Schendel"];
@@ -39,13 +39,20 @@
             [story2 setAuthor:@"Adam Kucera"];
             [story2 setThumbnail:[UIImage imageNamed:@"adam_pic.jpg"]];
             
-            allItems = [[NSMutableArray alloc] initWithObjects:story1, story2, nil];
+            [story1 updateDict];
+            [story2 updateDict];
+            
+            allItems = [[NSMutableArray alloc] initWithObjects:story1, nil];
+            allItemsDictionaryRepr = [[NSMutableArray alloc] initWithObjects:story1.dictionaryRepr, nil];
             ItemList = [PFObject objectWithClassName:@"ItemList"];
+            
             
         }
     }
     return self;
 }
+
+
 
 + (id)allocWithZone:(NSZone *)zone
 {
@@ -63,14 +70,54 @@
 {
     Story *s = [[Story alloc] init];
     [allItems addObject:s];
-    ItemList[@"itemList"] = allItems;
+    [allItemsDictionaryRepr addObject:s.dictionaryRepr];
+    ItemList[@"itemList"] = allItemsDictionaryRepr;
+    [ItemList saveInBackground];
     return s;
 }
 
 - (void)removeStory:(Story *)s
 {
     [allItems removeObjectIdenticalTo:s];
-    ItemList[@"itemList"] = allItems;
+    ItemList[@"itemList"] = [allItems copy];
+}
+
+//helper method for retrieve stories
+- (void)removeAllStories
+{
+    NSInteger length = [[[StoryStore sharedStore] allItems] count];
+    for (int i = 0; i < length; i++) {
+        [allItems removeLastObject];
+        }
+}
+
+- (void)retrieveStories
+{
+    PFQuery *query = [PFQuery queryWithClassName:@"ItemList"];
+    [query getObjectInBackgroundWithId:@"7UoZHdMSnQ" block:^(PFObject *itemList, NSError *error) {
+        //do something with the itemList
+        NSLog(@"%@", itemList);
+    }];
+    NSMutableArray *storyDictList = ItemList[@"itemList"];
+    NSMutableArray *storyList = [[NSMutableArray alloc] init];
+    
+    for (Story *story in storyDictList) {
+        Story *s = [[StoryStore sharedStore] createStory];
+        s.author = [story valueForKey:@"author"];
+        s.storyText = [story valueForKey:@"storyText"];
+        s.datePosted = [story valueForKey:@"datePosted"];
+        s.subject = [story valueForKey:@"subject"];
+        [storyList addObject:s];
+        }
+    
+    self.removeAllStories;
+    
+    for (Story *s in storyList){
+        [allItems addObject:s];
+    }
+    
+    
+    
 }
 
 - (void)saveChanges
@@ -86,6 +133,8 @@
     }
     return sharedStore;
 }
+
+
 
 - (void)moveItemAtIndex:(int)from toIndex:(int)to
 {

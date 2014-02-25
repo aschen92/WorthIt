@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		9362856418A2B8C700F8F8B4 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C635423218A092960023FF74 /* FacebookSDK.framework */; };
-		9398BA5318B7F5A300A793C4 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9398BA5218B7F5A300A793C4 /* Parse.framework */; };
 		9398BA5518B7F69500A793C4 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9398BA5418B7F69500A793C4 /* AudioToolbox.framework */; };
 		9398BA5718B7F69C00A793C4 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9398BA5618B7F69C00A793C4 /* CFNetwork.framework */; };
 		9398BA5918B7F6BC00A793C4 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9398BA5818B7F6BC00A793C4 /* libz.dylib */; };
@@ -23,6 +22,7 @@
 		C60BE6C1188FA08300C67BA1 /* StoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C60BE6C0188FA08300C67BA1 /* StoryCell.m */; };
 		C60BE6C3188FA09D00C67BA1 /* StoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C60BE6C2188FA09D00C67BA1 /* StoryCell.xib */; };
 		C60BE6C5188FA17E00C67BA1 /* brett_dog.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C60BE6C4188FA17E00C67BA1 /* brett_dog.jpg */; };
+		C629863218BC346200EB61F3 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C629863018BC344200EB61F3 /* Parse.framework */; };
 		C635423818A157D60023FF74 /* NewStoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C635423618A157D60023FF74 /* NewStoryViewController.m */; };
 		C635423918A157D60023FF74 /* NewStoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C635423718A157D60023FF74 /* NewStoryViewController.xib */; };
 		C635423B18A48D0C0023FF74 /* uiimageBground.png in Resources */ = {isa = PBXBuildFile; fileRef = C635423A18A48D0C0023FF74 /* uiimageBground.png */; };
@@ -67,7 +67,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		9398BA5218B7F5A300A793C4 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		9398BA5418B7F69500A793C4 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		9398BA5618B7F69C00A793C4 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		9398BA5818B7F6BC00A793C4 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
@@ -86,6 +85,7 @@
 		C60BE6C2188FA09D00C67BA1 /* StoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StoryCell.xib; sourceTree = "<group>"; };
 		C60BE6C4188FA17E00C67BA1 /* brett_dog.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = brett_dog.jpg; sourceTree = "<group>"; };
 		C60BE6C6188FA8F400C67BA1 /* worth_it.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = worth_it.mp4; sourceTree = "<group>"; };
+		C629863018BC344200EB61F3 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		C635423218A092960023FF74 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = WorthIt/FacebookSDK.framework; sourceTree = "<group>"; };
 		C635423518A157D60023FF74 /* NewStoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewStoryViewController.h; sourceTree = "<group>"; };
 		C635423618A157D60023FF74 /* NewStoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewStoryViewController.m; sourceTree = "<group>"; };
@@ -133,6 +133,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C629863218BC346200EB61F3 /* Parse.framework in Frameworks */,
 				9398BA6318B7F6F500A793C4 /* SystemConfiguration.framework in Frameworks */,
 				9398BA6118B7F6EE00A793C4 /* StoreKit.framework in Frameworks */,
 				9398BA5F18B7F6E800A793C4 /* Security.framework in Frameworks */,
@@ -147,7 +148,6 @@
 				C6E2B482189828DF00467CF1 /* MediaPlayer.framework in Frameworks */,
 				C69FD210188EE44700150019 /* MapKit.framework in Frameworks */,
 				C69FD1BF188ED88800150019 /* UIKit.framework in Frameworks */,
-				9398BA5318B7F5A300A793C4 /* Parse.framework in Frameworks */,
 				C69FD1BB188ED88800150019 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -187,6 +187,7 @@
 		C69FD1B9188ED88800150019 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C629863018BC344200EB61F3 /* Parse.framework */,
 				9398BA6218B7F6F500A793C4 /* SystemConfiguration.framework */,
 				9398BA6018B7F6EE00A793C4 /* StoreKit.framework */,
 				9398BA5E18B7F6E800A793C4 /* Security.framework */,
@@ -195,7 +196,6 @@
 				9398BA5818B7F6BC00A793C4 /* libz.dylib */,
 				9398BA5618B7F69C00A793C4 /* CFNetwork.framework */,
 				9398BA5418B7F69500A793C4 /* AudioToolbox.framework */,
-				9398BA5218B7F5A300A793C4 /* Parse.framework */,
 				C635423218A092960023FF74 /* FacebookSDK.framework */,
 				C6E2B481189828DF00467CF1 /* MediaPlayer.framework */,
 				C69FD20F188EE44700150019 /* MapKit.framework */,
@@ -561,6 +561,7 @@
 					/Users/thecomwiz/Documents/senior_design_project/WorthIt/WorthIt,
 					/Users/aaron/Documents/WorthIt/WorthIt,
 					/Users/aaron/Documents/WorthIt,
+					/Users/thecomwiz/Documents/senior_design_project/WorthIt,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WorthIt/WorthIt-Prefix.pch";
@@ -585,6 +586,7 @@
 					/Users/thecomwiz/Documents/senior_design_project/WorthIt/WorthIt,
 					/Users/aaron/Documents/WorthIt/WorthIt,
 					/Users/aaron/Documents/WorthIt,
+					/Users/thecomwiz/Documents/senior_design_project/WorthIt,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WorthIt/WorthIt-Prefix.pch";

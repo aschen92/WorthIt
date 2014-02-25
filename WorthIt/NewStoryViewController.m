@@ -69,6 +69,7 @@
 
 - (void)cancel:(id)sender
 {
+    // TODO: fix this feature
     [[StoryStore sharedStore] removeStory:[self story]];
     [[self presentingViewController] dismissViewControllerAnimated:YES completion:dismissBlock];
 }
@@ -96,6 +97,7 @@
         [story setThumbnail:[UIImage imageNamed:@"brett_dog.jpg"]];
     }
 
+    [story updateDict];
     [[StoryStore sharedStore] saveChanges];
     
     [[self presentingViewController] dismissViewControllerAnimated:YES completion:dismissBlock];

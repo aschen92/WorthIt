@@ -23,7 +23,6 @@
     [FBProfilePictureView class];
     [Parse setApplicationId:@"VaJOCOTx9f6Z6ys3NBh88304ZMQsBta68Ilu1LUV"
                   clientKey:@"zoSlnHJx0Rge4app5y5GLKqVNpXrEVSXdvHybicY"];
-    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     
     HomeViewController *hvc = [[HomeViewController alloc] init];
     UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:hvc];
