@@ -44,7 +44,10 @@
             
             allItems = [[NSMutableArray alloc] initWithObjects:story1, nil];
             allItemsDictionaryRepr = [[NSMutableArray alloc] initWithObjects:story1.dictionaryRepr, nil];
-            ItemList = [PFObject objectWithClassName:@"ItemList"];
+            if (!ItemList) {
+                ItemList = [PFObject objectWithClassName:@"ItemList"];
+            }
+            
             
             
         }
@@ -85,32 +88,41 @@
 //helper method for retrieve stories
 - (void)removeAllStories
 {
-    NSInteger length = [[[StoryStore sharedStore] allItems] count];
-    for (int i = 0; i < length; i++) {
-        [allItems removeLastObject];
-        }
+    allItems = nil;
 }
 
 - (void)retrieveStories
 {
+//    PFQuery *query = [PFQuery queryWithClassName:@"ItemList"];
+//    [query getObjectInBackgroundWithId:@"5s3fccpU2a" block:^(PFObject *itemList, NSError *error) {
+//        //do something with the itemList
+//        //NSLog(@"%@ doggie", itemList);
+//    }];
     PFQuery *query = [PFQuery queryWithClassName:@"ItemList"];
-    [query getObjectInBackgroundWithId:@"ixyol9mOY8" block:^(PFObject *itemList, NSError *error) {
-        //do something with the itemList
-        NSLog(@"%@ doggie", itemList);
+    [query whereKey:@"itemList" equalTo:@"itemList"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *storiesList, NSError *error) {
+        if (!error) {
+            //worked!
+            NSLog(@"got this list of stories %lu", (unsigned long)storiesList.count);
+        }
+        else {
+            NSLog(@"kitty");
+        }
     }];
     NSMutableArray *storyDictList = ItemList[@"itemList"];
     NSMutableArray *storyList = [[NSMutableArray alloc] init];
-    NSLog(@"%@ kitty", storyDictList);
-    for (Story *story in storyDictList) {
+
+    for (Story *story in ItemList[@"itemList"]) {
         Story *s = [[StoryStore sharedStore] createStory];
         s.author = [story valueForKey:@"author"];
         s.storyText = [story valueForKey:@"storyText"];
         s.datePosted = [story valueForKey:@"datePosted"];
         s.subject = [story valueForKey:@"subject"];
+        NSLog(@"%@", s);
         [storyList addObject:s];
         }
     
-    self.removeAllStories;
+    //self.removeAllStories;
     
     for (Story *s in storyList){
         [allItems addObject:s];
