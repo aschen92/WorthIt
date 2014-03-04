@@ -40,10 +40,10 @@
             story2[@"author"] = @"Adam Kucera";
             //story2[@"thumbnail"] = [UIImage imageNamed:@"adam_pic.jpg"];
             
-            [story1 saveInBackground];
-            [story2 saveInBackground];
+            //[story1 saveInBackground];
+            //[story2 saveInBackground];
 
-            allItems = [[NSMutableArray alloc] initWithObjects:story1, story2, nil];
+            //allItems = [[NSMutableArray alloc] initWithObjects:story1, story2, nil];
             
         }
     }
@@ -66,6 +66,18 @@
 
 - (void)retrieveStories
 {
+    //[allItems removeAllObjects];
+    PFQuery *query = [PFQuery queryWithClassName:@"Story"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *stories, NSError *error) {
+        if (!error) {
+            allItems = [stories mutableCopy];
+            NSLog(@"%lu", (unsigned long)stories.count);
+            NSLog(@"%lu", (unsigned long)allItems.count);
+            //NSLog(@"allitems is filled with PFObjects: %@", [[allItems objectAtIndex:0] isKindOfClass:[PFObject class]] ? @"true" : @"false");
+        } else {
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+    }];
     
 }
 
@@ -73,6 +85,7 @@
 {
     PFObject *s = [PFObject objectWithClassName:@"Story"];
     [allItems addObject:s];
+    //[s saveInBackground];
     return s;
 }
 

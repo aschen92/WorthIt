@@ -38,7 +38,7 @@
     
     
     [self.subjectField setText:[NSString stringWithFormat:@"%@", story[@"subject"]]];
-    [self.storyTextField setText:story[@"storyText"]];
+    [self.storyTextField setText:story[@"text"]];
     [self.subjectField setFont:[UIFont systemFontOfSize:17.0f]];
     NSString *title = [[NSString alloc] initWithFormat:@"%@'s Story", story[@"author"]];
     [self.navigationItem setTitle:title];

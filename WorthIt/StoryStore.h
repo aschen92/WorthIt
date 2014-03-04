@@ -27,7 +27,7 @@
 - (PFObject *)createStory;
 - (void)moveItemAtIndex:(int)from
                 toIndex:(int)to;
-- (NSString *)itemArchivePath;
+
 
 
 - (void)saveChanges;

@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9392721B18C5B6F400883DE7 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C629863018BC344200EB61F3 /* Parse.framework */; };
-		9392721C18C5B70900883DE7 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C635423218A092960023FF74 /* FacebookSDK.framework */; };
 		9398BA5518B7F69500A793C4 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9398BA5418B7F69500A793C4 /* AudioToolbox.framework */; };
 		9398BA5718B7F69C00A793C4 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9398BA5618B7F69C00A793C4 /* CFNetwork.framework */; };
 		9398BA5918B7F6BC00A793C4 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9398BA5818B7F6BC00A793C4 /* libz.dylib */; };
@@ -26,6 +24,8 @@
 		C635423818A157D60023FF74 /* NewStoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C635423618A157D60023FF74 /* NewStoryViewController.m */; };
 		C635423918A157D60023FF74 /* NewStoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C635423718A157D60023FF74 /* NewStoryViewController.xib */; };
 		C635423B18A48D0C0023FF74 /* uiimageBground.png in Resources */ = {isa = PBXBuildFile; fileRef = C635423A18A48D0C0023FF74 /* uiimageBground.png */; };
+		C69B9DB118C6344F008F25FC /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C629863018BC344200EB61F3 /* Parse.framework */; };
+		C69B9DB218C6345C008F25FC /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C635423218A092960023FF74 /* FacebookSDK.framework */; };
 		C69FD1BB188ED88800150019 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C69FD1BA188ED88800150019 /* Foundation.framework */; };
 		C69FD1BD188ED88800150019 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C69FD1BC188ED88800150019 /* CoreGraphics.framework */; };
 		C69FD1BF188ED88800150019 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C69FD1BE188ED88800150019 /* UIKit.framework */; };
@@ -133,8 +133,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9392721C18C5B70900883DE7 /* FacebookSDK.framework in Frameworks */,
-				9392721B18C5B6F400883DE7 /* Parse.framework in Frameworks */,
+				C69B9DB218C6345C008F25FC /* FacebookSDK.framework in Frameworks */,
+				C69B9DB118C6344F008F25FC /* Parse.framework in Frameworks */,
 				9398BA6318B7F6F500A793C4 /* SystemConfiguration.framework in Frameworks */,
 				9398BA6118B7F6EE00A793C4 /* StoreKit.framework in Frameworks */,
 				9398BA5F18B7F6E800A793C4 /* Security.framework in Frameworks */,
@@ -558,6 +558,8 @@
 					"$(inherited)",
 					/Users/aaron/Documents/WorthIt,
 					/Users/aaron/Documents/WorthIt/WorthIt,
+					/Users/thecomwiz/Documents/senior_design_project/WorthIt,
+					/Users/thecomwiz/Documents/senior_design_project/WorthIt/WorthIt,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WorthIt/WorthIt-Prefix.pch";
@@ -579,6 +581,8 @@
 					"$(inherited)",
 					/Users/aaron/Documents/WorthIt,
 					/Users/aaron/Documents/WorthIt/WorthIt,
+					/Users/thecomwiz/Documents/senior_design_project/WorthIt,
+					/Users/thecomwiz/Documents/senior_design_project/WorthIt/WorthIt,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WorthIt/WorthIt-Prefix.pch";

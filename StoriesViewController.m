@@ -133,7 +133,7 @@
     // removes the separators from blank cells
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     
-    
+    //[[StoryStore sharedStore] retrieveStories];
 
 }
 
