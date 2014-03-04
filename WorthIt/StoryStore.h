@@ -14,19 +14,17 @@
 @interface StoryStore : NSObject
 {
     NSMutableArray *allItems;
-    NSMutableArray *allItemsDictionaryRepr;
-    PFObject *ItemList;
 }
 
 + (StoryStore *)sharedStore;
 - (void)retrieveStories;
 
-- (void)removeStory:(Story *)s;
+- (void)removeStory:(PFObject *)s;
 - (void)removeAllStories;
 
 
 - (NSArray *)allItems;
-- (Story *)createStory;
+- (PFObject *)createStory;
 - (void)moveItemAtIndex:(int)from
                 toIndex:(int)to;
 - (NSString *)itemArchivePath;

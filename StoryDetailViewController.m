@@ -20,7 +20,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         UINavigationItem *nav = [self navigationItem];
-        NSString *title = [[NSString alloc] initWithFormat:@"%@'s Story", [self.story author]];
+        NSString *title = [[NSString alloc] initWithFormat:@"%@'s Story", story[@"author"]];
         [nav setTitle:title];
         
         // Wartburg Orange - #FF6F30
@@ -37,10 +37,10 @@
     [super viewWillAppear:animated];
     
     
-    [self.subjectField setText:[NSString stringWithFormat:@"%@", [story subject]]];
-    [self.storyTextField setText:[story storyText]];
+    [self.subjectField setText:[NSString stringWithFormat:@"%@", story[@"subject"]]];
+    [self.storyTextField setText:story[@"storyText"]];
     [self.subjectField setFont:[UIFont systemFontOfSize:17.0f]];
-    NSString *title = [[NSString alloc] initWithFormat:@"%@'s Story", [self.story author]];
+    NSString *title = [[NSString alloc] initWithFormat:@"%@'s Story", story[@"author"]];
     [self.navigationItem setTitle:title];
 }
 

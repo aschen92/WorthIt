@@ -16,6 +16,7 @@
 #import <FacebookSDK/FacebookSDK.h>
 #import <Parse/Parse.h>
 
+
 @interface StoriesViewController () <FBLoginViewDelegate>
 @end
 
@@ -58,7 +59,7 @@
 
 - (void)addNewItem:(id)sender
 {
-    Story *story = [[StoryStore sharedStore] createStory];
+    PFObject *story = [[StoryStore sharedStore] createStory];
     
     NewStoryViewController *newStoryViewController = [[NewStoryViewController alloc] init];
     
@@ -167,7 +168,7 @@
 didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     StoryDetailViewController *storyDetailViewController = [[StoryDetailViewController alloc] init];
-    Story *selectedStory = [[[StoryStore sharedStore] allItems] objectAtIndex:[indexPath row]];
+    PFObject *selectedStory = [[[StoryStore sharedStore] allItems] objectAtIndex:[indexPath row]];
     
     [storyDetailViewController setStory:selectedStory];
     

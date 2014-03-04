@@ -7,8 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@class Story;
+#import <Parse/Parse.h>
 
 @interface StoryDetailViewController : UIViewController <UINavigationControllerDelegate, UITextFieldDelegate>
 
@@ -17,7 +16,7 @@
 @property (weak, nonatomic) IBOutlet UITextView *storyTextField;
 
 
-@property (nonatomic, strong) Story *story;
+@property (nonatomic, strong) PFObject *story;
 @property (nonatomic, copy) void (^dismissBlock)(void);
 
 

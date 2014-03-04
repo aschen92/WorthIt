@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Story.h"
+#import <Parse/Parse.h>
 
 @interface NewStoryViewController : UIViewController <UITextFieldDelegate>
 
@@ -20,7 +21,7 @@
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
 @property (nonatomic, copy) void (^dismissBlock)(void);
-@property (nonatomic, weak) Story *story;
+@property (nonatomic, weak) PFObject *story;
 
 
 - (void)dismissKeyboard;

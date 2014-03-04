@@ -78,26 +78,25 @@
 - (void)save:(id)sender
 {
     
-    [story setSubject:[subjectField text]];
-    [story setStoryText:[storyTextField text]];
-    [story setAuthor:[nameField text]];
+    story[@"subject"] = [subjectField text];
+    story [@"text"] = [storyTextField text];
+    story [@"author"] = [nameField text];
     
     // sets the Story iVar datePosted as today's date.
     NSDate *today = [[NSDate alloc] initWithTimeIntervalSinceNow:0];
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateStyle:NSDateFormatterShortStyle];
     NSString *dateCreated = [formatter stringFromDate:today];
-    [story setDatePosted:dateCreated];
+    story[@"datePosted"] = dateCreated;
     
     
     // checks to see if the user wants to use their own picture as a display img
     if ([shouldShowProfilePicture isOn]) {
         //code to set facebook profile pic as thumbnail
     } else {
-        [story setThumbnail:[UIImage imageNamed:@"brett_dog.jpg"]];
+        story[@"thumbnail"] = [UIImage imageNamed:@"brett_dog.jpg"];
     }
 
-    [story updateDict];
     [[StoryStore sharedStore] saveChanges];
     
     [[self presentingViewController] dismissViewControllerAnimated:YES completion:dismissBlock];
