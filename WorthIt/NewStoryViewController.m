@@ -79,8 +79,8 @@
 {
     
     story[@"subject"] = [subjectField text];
-    story [@"text"] = [storyTextField text];
-    story [@"author"] = [nameField text];
+    story[@"text"] = [storyTextField text];
+    story[@"author"] = [nameField text];
     
     // sets the Story iVar datePosted as today's date.
     NSDate *today = [[NSDate alloc] initWithTimeIntervalSinceNow:0];
@@ -94,10 +94,11 @@
     if ([shouldShowProfilePicture isOn]) {
         //code to set facebook profile pic as thumbnail
     } else {
-        story[@"thumbnail"] = [UIImage imageNamed:@"brett_dog.jpg"];
+        //story[@"thumbnail"] = [UIImage imageNamed:@"brett_dog.jpg"];
     }
 
-    [[StoryStore sharedStore] saveChanges];
+    [story saveInBackground];
+  //  [[StoryStore sharedStore] saveChanges];
     
     [[self presentingViewController] dismissViewControllerAnimated:YES completion:dismissBlock];
 }

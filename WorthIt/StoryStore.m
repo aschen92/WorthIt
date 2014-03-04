@@ -30,16 +30,18 @@
             story1[@"subject"] = @"Wartburg Choir";
             story1[@"datePosted"] = @"1/20/14";
             story1[@"author"] = @"Aaron Schendel";
-            story1[@"thumbnail"] = [UIImage imageNamed:@"aaron_pic.jpg"];
+            //story1[@"thumbnail"] = [UIImage imageNamed:@"aaron_pic.jpg"];
 
             
             PFObject *story2 = [[PFObject alloc] initWithClassName:@"Story"];
             story2[@"text"] = @"Yo mah name iz adam";
-            story2[@"subject"] = @"Wartburg Choir";
-            story2[@"datePosted"] = @"1/20/14";
-            story2[@"author"] = @"Aaron Schendel";
-            story2[@"thumbnail"] = [UIImage imageNamed:@"adam_pic.jpg"];
+            story2[@"subject"] = @"Track and Field";
+            story2[@"datePosted"] = @"1/23/14";
+            story2[@"author"] = @"Adam Kucera";
+            //story2[@"thumbnail"] = [UIImage imageNamed:@"adam_pic.jpg"];
             
+            [story1 saveInBackground];
+            [story2 saveInBackground];
 
             allItems = [[NSMutableArray alloc] initWithObjects:story1, story2, nil];
             
@@ -71,7 +73,6 @@
 {
     PFObject *s = [PFObject objectWithClassName:@"Story"];
     [allItems addObject:s];
-
     return s;
 }
 
@@ -114,12 +115,7 @@
     [allItems insertObject:s atIndex:to];
 }
 
-- (NSString *)itemArchivePath
-{
-    NSArray *documentDirectories = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *docDirectory = [documentDirectories objectAtIndex:0];
-    return [docDirectory stringByAppendingPathComponent:@"store.data"];
-}
+
 
 
 

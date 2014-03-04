@@ -86,7 +86,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    Story *story = [[[StoryStore sharedStore] allItems]
+    PFObject *story = [[[StoryStore sharedStore] allItems]
                   objectAtIndex:[indexPath row]];
     
     
@@ -102,12 +102,12 @@
         }
     }
     
-    NSString *author = [[NSString alloc] initWithFormat:@"Shared by: %@", [story author]];
+    NSString *author = [[NSString alloc] initWithFormat:@"Shared by: %@", story[@"author"]];
     
     [[cell authorLabel] setText:author];
-    [[cell storySubject] setText:[story subject]];
-    [[cell dateLabel] setText:[story datePosted]];
-    [[cell profilePicture] setImage:[story thumbnail]];
+    [[cell storySubject] setText:story[@"subject"]];
+    [[cell dateLabel] setText:story[@"datePosted"]];
+   // [[cell profilePicture] setImage:story[@"thumbnail"]];
     
     [cell setController:self];
     [cell setTableView:tableView];
