@@ -14,6 +14,7 @@
 @implementation StoryStore
 
 
+
 #pragma mark - Init overriding
 
 - (id)init
@@ -59,9 +60,15 @@
 
 #pragma mark - Instance Methods
 
-- (NSArray *)allItems
+// changed to mutable array
+- (NSMutableArray *)allItems
 {
     return allItems;
+}
+
+- (void)setAllItems:(NSArray *)newArray
+{
+    allItems = [newArray mutableCopy];
 }
 
 - (void)retrieveStories
@@ -72,13 +79,13 @@
         if (!error) {
             allItems = [stories mutableCopy];
             NSLog(@"%lu stories", (unsigned long)stories.count);
-            NSLog(@"%lu allitems", (unsigned long)allItems.count);
+            
             //NSLog(@"allitems is filled with PFObjects: %@", [[allItems objectAtIndex:0] isKindOfClass:[PFObject class]] ? @"true" : @"false");
         } else {
             NSLog(@"Error: %@ %@", error, [error userInfo]);
         }
     }];
-    
+    NSLog(@"%lu allitems", (unsigned long)allItems.count);
 }
 
 - (PFObject *)createStory

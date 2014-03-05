@@ -18,6 +18,6 @@
 - (IBAction)addNewItem:(id)sender;
 - (void)refreshInvoked:(id)sender forState:(UIControlState)state;
 
-
+- (void)retrieveStories;
 
 @end

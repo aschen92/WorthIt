@@ -82,7 +82,7 @@
  numberOfRowsInSection:(NSInteger)section
 {
     NSLog(@"%ld cats", (long)self.numOfStories);
-    return 5;//self.numOfStories;
+    return self.numOfStories;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -142,7 +142,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     // not the right place to put this but viewDidLoad isn't either
-    [[StoryStore sharedStore] retrieveStories];
+    [self retrieveStories];
     self.numOfStories = [[[StoryStore sharedStore] allItems] count];
     
     
@@ -182,6 +182,23 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return 78;
+}
+
+- (void)retrieveStories
+{
+    //[allItems removeAllObjects];
+    PFQuery *query = [PFQuery queryWithClassName:@"Story"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *stories, NSError *error) {
+        if (!error) {
+            [[StoryStore sharedStore] setAllItems:stories];
+            NSLog(@"%lu stories", (unsigned long)stories.count);
+            numOfStories = [[[StoryStore sharedStore] allItems] count];
+            //NSLog(@"allitems is filled with PFObjects: %@", [[allItems objectAtIndex:0] isKindOfClass:[PFObject class]] ? @"true" : @"false");
+        } else {
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+    }];
+    
 }
 
 
