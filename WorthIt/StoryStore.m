@@ -71,8 +71,8 @@
     [query findObjectsInBackgroundWithBlock:^(NSArray *stories, NSError *error) {
         if (!error) {
             allItems = [stories mutableCopy];
-            NSLog(@"%lu", (unsigned long)stories.count);
-            NSLog(@"%lu", (unsigned long)allItems.count);
+            NSLog(@"%lu stories", (unsigned long)stories.count);
+            NSLog(@"%lu allitems", (unsigned long)allItems.count);
             //NSLog(@"allitems is filled with PFObjects: %@", [[allItems objectAtIndex:0] isKindOfClass:[PFObject class]] ? @"true" : @"false");
         } else {
             NSLog(@"Error: %@ %@", error, [error userInfo]);

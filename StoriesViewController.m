@@ -81,11 +81,13 @@
 - (NSInteger)tableView:(UITableView *)tableView
  numberOfRowsInSection:(NSInteger)section
 {
-    return self.numOfStories;
+    NSLog(@"%ld cats", (long)self.numOfStories);
+    return 5;//self.numOfStories;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    NSLog(@"%ld dogs", (long)numOfStories);
     PFObject *story = [[[StoryStore sharedStore] allItems]
                   objectAtIndex:[indexPath row]];
     
@@ -140,9 +142,11 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     // not the right place to put this but viewDidLoad isn't either
+    [[StoryStore sharedStore] retrieveStories];
     self.numOfStories = [[[StoryStore sharedStore] allItems] count];
     
-    [[StoryStore sharedStore] retrieveStories];
+    
+    
 }
 
 - (void)refreshInvoked:(id)sender forState:(UIControlState)state
