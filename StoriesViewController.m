@@ -142,7 +142,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     // not the right place to put this but viewDidLoad isn't either
-    [self retrieveStories];
+    [[StoryStore sharedStore] retrieveStories];
     self.numOfStories = [[[StoryStore sharedStore] allItems] count];
     
     
@@ -184,22 +184,7 @@ didSelectRowAtIndexPath:(NSIndexPath *)indexPath
     return 78;
 }
 
-- (void)retrieveStories
-{
-    //[allItems removeAllObjects];
-    PFQuery *query = [PFQuery queryWithClassName:@"Story"];
-    [query findObjectsInBackgroundWithBlock:^(NSArray *stories, NSError *error) {
-        if (!error) {
-            [[StoryStore sharedStore] setAllItems:stories];
-            NSLog(@"%lu stories", (unsigned long)stories.count);
-            numOfStories = [[[StoryStore sharedStore] allItems] count];
-            //NSLog(@"allitems is filled with PFObjects: %@", [[allItems objectAtIndex:0] isKindOfClass:[PFObject class]] ? @"true" : @"false");
-        } else {
-            NSLog(@"Error: %@ %@", error, [error userInfo]);
-        }
-    }];
-    
-}
+
 
 
 
