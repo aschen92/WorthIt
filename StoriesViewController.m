@@ -133,16 +133,22 @@
     // removes the separators from blank cells
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     
-    //[[StoryStore sharedStore] retrieveStories];
-
+    [[StoryStore sharedStore] retrieveStories];
+    [self.tableView reloadData];
+    
+    // not the right place to put this but viewDidLoad isn't either
+    self.numOfStories = [[[StoryStore sharedStore] allItems] count];
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
+    [[StoryStore sharedStore] retrieveStories];
+    [self.tableView reloadData];
+
+    
     // not the right place to put this but viewDidLoad isn't either
     self.numOfStories = [[[StoryStore sharedStore] allItems] count];
-    
-    [[StoryStore sharedStore] retrieveStories];
 }
 
 - (void)refreshInvoked:(id)sender forState:(UIControlState)state
