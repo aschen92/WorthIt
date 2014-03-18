@@ -12,6 +12,7 @@
 #import "LocationViewController.h"
 #import <FacebookSDK/FacebookSDK.h>
 #import <Parse/Parse.h>
+#import "StoryStore.h"
 
 @interface HomeViewController () <FBLoginViewDelegate>
 
@@ -144,6 +145,7 @@
 
 - (IBAction)showStories:(id)sender
 {
+    //[[StoryStore sharedStore] retrieveStories];
     StoriesViewController *svc = [[StoriesViewController alloc] init];
     [[self navigationController] pushViewController:svc animated:YES];
     

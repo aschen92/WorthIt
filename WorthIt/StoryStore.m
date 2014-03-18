@@ -71,22 +71,24 @@
     allItems = [newArray mutableCopy];
 }
 
-- (void)retrieveStories
-{
-    //[allItems removeAllObjects];
-    PFQuery *query = [PFQuery queryWithClassName:@"Story"];
-    [query findObjectsInBackgroundWithBlock:^(NSArray *stories, NSError *error) {
-        if (!error) {
-            allItems = [stories mutableCopy];
-            NSLog(@"%lu stories", (unsigned long)stories.count);
-            
-            //NSLog(@"allitems is filled with PFObjects: %@", [[allItems objectAtIndex:0] isKindOfClass:[PFObject class]] ? @"true" : @"false");
-        } else {
-            NSLog(@"Error: %@ %@", error, [error userInfo]);
-        }
-    }];
-    NSLog(@"%lu allitems", (unsigned long)allItems.count);
-}
+//- (void)retrieveStories
+//{
+//    //[allItems removeAllObjects];
+//    PFQuery *query = [PFQuery queryWithClassName:@"Story"];
+//    //allItems = [[query findObjects] mutableCopy]; works but is slow and bad
+//    [query findObjectsInBackgroundWithBlock:^(NSArray *stories, NSError *error) {
+//        if (!error) {
+//            allItems = [stories mutableCopy];
+//            NSLog(@"%lu stories", (unsigned long)stories.count);
+//            
+//            
+//            //NSLog(@"allitems is filled with PFObjects: %@", [[allItems objectAtIndex:0] isKindOfClass:[PFObject class]] ? @"true" : @"false");
+//        } else {
+//            NSLog(@"Error: %@ %@", error, [error userInfo]);
+//        }
+//    }];
+//    NSLog(@"%lu allitems", (unsigned long)allItems.count);
+//}
 
 - (PFObject *)createStory
 {

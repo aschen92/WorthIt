@@ -81,13 +81,11 @@
 - (NSInteger)tableView:(UITableView *)tableView
  numberOfRowsInSection:(NSInteger)section
 {
-    NSLog(@"%ld cats", (long)self.numOfStories);
     return self.numOfStories;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"%ld dogs", (long)numOfStories);
     PFObject *story = [[[StoryStore sharedStore] allItems]
                   objectAtIndex:[indexPath row]];
     
@@ -135,27 +133,47 @@
     // removes the separators from blank cells
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     
-    [[StoryStore sharedStore] retrieveStories];
+    [self retrieveStories];
     [self.tableView reloadData];
     
     // not the right place to put this but viewDidLoad isn't either
-    self.numOfStories = [[[StoryStore sharedStore] allItems] count];
+    //self.numOfStories = [[[StoryStore sharedStore] allItems] count];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    [[StoryStore sharedStore] retrieveStories];
-    [self.tableView reloadData];
-
-    
-    // not the right place to put this but viewDidLoad isn't either
-    [[StoryStore sharedStore] retrieveStories];
-    self.numOfStories = [[[StoryStore sharedStore] allItems] count];
+    [self retrieveStories];
+    //self.numOfStories = [[[StoryStore sharedStore] allItems] count];
 }
+
+- (void)retrieveStories
+{
+    //[allItems removeAllObjects];
+    PFQuery *query = [PFQuery queryWithClassName:@"Story"];
+    //allItems = [[query findObjects] mutableCopy]; works but is slow and bad
+    [query findObjectsInBackgroundWithBlock:^(NSArray *stories, NSError *error) {
+        if (!error) {
+            StoryStore.sharedStore.allItems = [stories mutableCopy];
+            [self.tableView reloadData];
+            self.numOfStories = [[[StoryStore sharedStore] allItems] count];
+            NSLog(@"%lu storiessss", (unsigned long)stories.count);
+            
+            
+            //NSLog(@"allitems is filled with PFObjects: %@", [[allItems objectAtIndex:0] isKindOfClass:[PFObject class]] ? @"true" : @"false");
+        } else {
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+    }];
+    NSLog(@"%lu allitems", (unsigned long)StoryStore.sharedStore.allItems.count);
+}
+
 
 - (void)refreshInvoked:(id)sender forState:(UIControlState)state
 {
-    [self.tableView reloadData];
+    //[self.tableView reloadData];
+    self.numOfStories = [[[StoryStore sharedStore] allItems] count];
+    [self retrieveStories];
+    
     [self.refreshControl endRefreshing];
 }
 
