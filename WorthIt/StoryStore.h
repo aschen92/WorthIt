@@ -16,14 +16,16 @@
     NSMutableArray *allItems;
 }
 
+- (void)setAllItems:(NSArray *)newArray;
+
 + (StoryStore *)sharedStore;
 - (void)retrieveStories;
 
 - (void)removeStory:(PFObject *)s;
 - (void)removeAllStories;
 
-
-- (NSArray *)allItems;
+//changed to mutable from normal array.
+- (NSMutableArray *)allItems;
 - (PFObject *)createStory;
 - (void)moveItemAtIndex:(int)from
                 toIndex:(int)to;
