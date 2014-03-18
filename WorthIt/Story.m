@@ -9,7 +9,7 @@
 #import "Story.h"
 
 @implementation Story
-@synthesize text, subject, thumbnail, datePosted, author;
+@synthesize text, subject, thumbnail, datePosted, author, location;
 
 
 

@@ -156,7 +156,7 @@
             StoryStore.sharedStore.allItems = [stories mutableCopy];
             [self.tableView reloadData];
             self.numOfStories = [[[StoryStore sharedStore] allItems] count];
-            NSLog(@"%lu storiessss", (unsigned long)stories.count);
+            //NSLog(@"%lu storiessss", (unsigned long)stories.count);
             
             
             //NSLog(@"allitems is filled with PFObjects: %@", [[allItems objectAtIndex:0] isKindOfClass:[PFObject class]] ? @"true" : @"false");
@@ -164,7 +164,7 @@
             NSLog(@"Error: %@ %@", error, [error userInfo]);
         }
     }];
-    NSLog(@"%lu allitems", (unsigned long)StoryStore.sharedStore.allItems.count);
+    //NSLog(@"%lu allitems", (unsigned long)StoryStore.sharedStore.allItems.count);
 }
 
 

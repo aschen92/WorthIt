@@ -18,6 +18,8 @@
 @property (nonatomic, strong) UIImage *thumbnail;
 @property (nonatomic, strong) NSString *author;
 
+@property (nonatomic, strong) NSString *location;
+
 
 @end
 
