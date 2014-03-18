@@ -140,7 +140,7 @@
     
     // not the right place to put this but viewDidLoad isn't either
     self.numOfStories = [[[StoryStore sharedStore] allItems] count];
-    
+    asdfasdf
 }
 
 - (void)viewWillAppear:(BOOL)animated
