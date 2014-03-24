@@ -32,7 +32,7 @@
         [[self navigationItem] setRightBarButtonItem:saveItem];
         
         // Wartburg Orange - #FF6F30
-        [self.view setBackgroundColor:[UIColor colorWithRed:1 green:0.435 blue:0.188 alpha:1.0]];
+        [self.scrollView setBackgroundColor:[UIColor colorWithRed:1 green:0.435 blue:0.188 alpha:1.0]];
         
         
         
@@ -63,6 +63,13 @@
     [[self view] endEditing:YES];
     
     
+}
+
+- (void)viewDidLayoutSubviews
+{
+    [super viewDidLayoutSubviews];
+    [self.scrollView layoutIfNeeded];
+    self.scrollView.contentSize = self.contentView.bounds.size;
 }
 
 #pragma mark - Button methods
