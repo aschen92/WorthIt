@@ -97,6 +97,11 @@
     NSString *dateCreated = [formatter stringFromDate:today];
     story[@"datePosted"] = dateCreated;
     
+    [story saveInBackground];
+    
+    
+    
+    //  [[StoryStore sharedStore] saveChanges];
     
     // checks to see if the user wants to use their own picture as a display img
     if ([shouldShowProfilePicture isOn]) {
@@ -105,8 +110,7 @@
         //story[@"thumbnail"] = [UIImage imageNamed:@"brett_dog.jpg"];
     }
 
-    [story saveInBackground];
-  //  [[StoryStore sharedStore] saveChanges];
+    
     
     [[self presentingViewController] dismissViewControllerAnimated:YES completion:dismissBlock];
 }
