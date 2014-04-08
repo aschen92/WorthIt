@@ -19,7 +19,6 @@
 - (void)setAllItems:(NSArray *)newArray;
 
 + (StoryStore *)sharedStore;
-//- (void)retrieveStories;
 
 - (void)removeStory:(PFObject *)s;
 - (void)removeAllStories;

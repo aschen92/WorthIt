@@ -39,12 +39,6 @@
             story2[@"subject"] = @"Track and Field";
             story2[@"datePosted"] = @"1/23/14";
             story2[@"author"] = @"Adam Kucera";
-            //story2[@"thumbnail"] = [UIImage imageNamed:@"adam_pic.jpg"];
-            
-            //[story1 saveInBackground];
-            //[story2 saveInBackground];
-
-            //allItems = [[NSMutableArray alloc] initWithObjects:story1, story2, nil];
             
         }
     }
@@ -71,30 +65,11 @@
     allItems = [newArray mutableCopy];
 }
 
-//- (void)retrieveStories
-//{
-//    //[allItems removeAllObjects];
-//    PFQuery *query = [PFQuery queryWithClassName:@"Story"];
-//    //allItems = [[query findObjects] mutableCopy]; works but is slow and bad
-//    [query findObjectsInBackgroundWithBlock:^(NSArray *stories, NSError *error) {
-//        if (!error) {
-//            allItems = [stories mutableCopy];
-//            NSLog(@"%lu stories", (unsigned long)stories.count);
-//            
-//            
-//            //NSLog(@"allitems is filled with PFObjects: %@", [[allItems objectAtIndex:0] isKindOfClass:[PFObject class]] ? @"true" : @"false");
-//        } else {
-//            NSLog(@"Error: %@ %@", error, [error userInfo]);
-//        }
-//    }];
-//    NSLog(@"%lu allitems", (unsigned long)allItems.count);
-//}
 
 - (PFObject *)createStory
 {
     PFObject *s = [PFObject objectWithClassName:@"Story"];
     [allItems addObject:s];
-    //[s saveInBackground];
     return s;
 }
 
