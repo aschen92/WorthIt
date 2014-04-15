@@ -76,7 +76,6 @@
 
 - (void)cancel:(id)sender
 {
-    // TODO: fix this feature
     [[StoryStore sharedStore] removeStory:[self story]];
     [[self presentingViewController] dismissViewControllerAnimated:YES completion:dismissBlock];
 }
@@ -99,10 +98,6 @@
     
     [story saveInBackground];
     
-    
-    
-    //  [[StoryStore sharedStore] saveChanges];
-    
     // checks to see if the user wants to use their own picture as a display img
     if ([shouldShowProfilePicture isOn]) {
         //code to set facebook profile pic as thumbnail
@@ -117,15 +112,6 @@
 
 
 #pragma mark - Other stuff
-
-//- (void)textFieldDidBeginEditing:(UITextField *)textField {
-//    CGPoint scrollPoint = CGPointMake(0, textField.frame.origin.y);
-//    [self.scrollView setContentOffset:scrollPoint animated:YES];
-//}
-
-//- (void)textFieldDidEndEditing:(UITextField *)textField {
-//    [self.scrollView setContentOffset:CGPointZero animated:YES];
-//}
 
 // removes the keyboard when the background is tapped.
 - (IBAction)backgroundTapped:(id)sender

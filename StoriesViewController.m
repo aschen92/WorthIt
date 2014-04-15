@@ -107,7 +107,7 @@
     [[cell authorLabel] setText:author];
     [[cell storySubject] setText:story[@"subject"]];
     [[cell dateLabel] setText:story[@"datePosted"]];
-   // [[cell profilePicture] setImage:story[@"thumbnail"]];
+   // [[cell profilePicture] setImage:story[@"thumbnail"]];   for when image setting is done
     
     [cell setController:self];
     [cell setTableView:tableView];
@@ -135,15 +135,11 @@
     
     [self retrieveStories];
     [self.tableView reloadData];
-    
-    // not the right place to put this but viewDidLoad isn't either
-    //self.numOfStories = [[[StoryStore sharedStore] allItems] count];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [self retrieveStories];
-    //self.numOfStories = [[[StoryStore sharedStore] allItems] count];
 }
 
 - (void)retrieveStories
@@ -163,7 +159,6 @@
 
 - (void)refreshInvoked:(id)sender forState:(UIControlState)state
 {
-    //[self.tableView reloadData];
     self.numOfStories = [[[StoryStore sharedStore] allItems] count];
     [self retrieveStories];
     

@@ -22,28 +22,3 @@
 
 
 @end
-
-
-
-
-
-
-//{
-//    NSMutableDictionary *storyDictionary;
-//}
-//
-//@property (nonatomic, strong) NSString *storyText;
-//@property (nonatomic, strong) NSString *subject;
-//
-//// should be a NSDate
-//@property (nonatomic, strong) NSString *datePosted;
-//
-//@property (nonatomic, strong) UIImage *thumbnail;
-//@property (nonatomic, strong) NSString *author;
-//
-////- initWithStorySubject:(NSString *)subject;
-//
-//- (NSMutableDictionary *)dictionaryRepr;
-//- (void)updateDict;
-
-

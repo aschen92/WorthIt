@@ -22,7 +22,7 @@
     self = [super init];
     if (self) {
         
-        
+        // Hard coded stories in case test cases are needed
         if (!allItems) {
             //allItems = [[NSMutableArray alloc] init];
             PFObject *story1 = [[PFObject alloc] initWithClassName:@"Story"];
