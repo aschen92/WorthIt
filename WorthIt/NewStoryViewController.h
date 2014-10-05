@@ -19,16 +19,13 @@
 @property (weak, nonatomic) IBOutlet UISwitch *shouldShowProfilePicture;
 @property (weak, nonatomic) IBOutlet UITextView *storyTextField;
 
-@property (weak, nonatomic) IBOutlet UITextField *activeField;
 
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
-@property (weak, nonatomic) IBOutlet UIView *contentView;
 
 
 @property (nonatomic, copy) void (^dismissBlock)(void);
 @property (nonatomic, weak) PFObject *story;
-
 
 - (void)dismissKeyboard;
 

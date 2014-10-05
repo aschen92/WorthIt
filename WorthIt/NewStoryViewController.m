@@ -32,7 +32,7 @@
         [[self navigationItem] setRightBarButtonItem:saveItem];
         
         // Wartburg Orange - #FF6F30
-        [self.scrollView setBackgroundColor:[UIColor colorWithRed:1 green:0.435 blue:0.188 alpha:1.0]];
+        [self.view setBackgroundColor:[UIColor colorWithRed:1 green:0.435 blue:0.188 alpha:1.0]];
         
         
         
@@ -45,8 +45,18 @@
     // recognizes when background is tapped and calls dismissKeyboard
     UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard)];
     [self.view addGestureRecognizer:gestureRecognizer];
+ 
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    
+    [super viewWillAppear:animated];
+    
+    [self registerForKeyboardNotifications];
+    
+    
+}
 
 
 - (void)dismissKeyboard
@@ -62,15 +72,12 @@
     [super viewWillDisappear:animated];
     [[self view] endEditing:YES];
     
+    [self deregisterFromKeyboardNotifications];
+    
     
 }
 
-- (void)viewDidLayoutSubviews
-{
-    [super viewDidLayoutSubviews];
-    [self.scrollView layoutIfNeeded];
-    self.scrollView.contentSize = self.contentView.bounds.size;
-}
+
 
 #pragma mark - Button methods
 
@@ -132,26 +139,39 @@
              name:UIKeyboardWillHideNotification object:nil];
  
 }
+
+- (void)deregisterFromKeyboardNotifications {
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:UIKeyboardDidHideNotification
+                                                  object:nil];
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:UIKeyboardWillHideNotification
+                                                  object:nil];
+}
  
 // Called when the UIKeyboardDidShowNotification is sent.
 - (void)keyboardWasShown:(NSNotification*)aNotification
 {
     NSDictionary* info = [aNotification userInfo];
-    CGSize kbSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+    CGRect kbFrame = [info[UIKeyboardFrameBeginUserInfoKey] CGRectValue];
+    // Convert the keyboard frame from the window to the scrollview
+    kbFrame = [self.scrollView convertRect:kbFrame fromView:nil];
+    CGSize kbSize = kbFrame.size;
     
-    UIEdgeInsets contentInsets = UIEdgeInsetsMake(0.0, 0.0, kbSize.height, 0.0);
-    scrollView.contentInset = contentInsets;
-    scrollView.scrollIndicatorInsets = contentInsets;
+    UIEdgeInsets contentInsets = UIEdgeInsetsMake(65.0, 0.0, kbSize.height, 0.0);
+    self.scrollView.contentInset = contentInsets;
+    self.scrollView.scrollIndicatorInsets = contentInsets;
     
     // If active text field is hidden by keyboard, scroll it so it's visible
     // Your app might not need or want this behavior.
     CGRect aRect = self.view.frame;
     aRect.size.height -= kbSize.height;
-    if (!CGRectContainsPoint(aRect, self.activeField.frame.origin) ) {
-        [scrollView setContentOffset:CGPointMake(0,aRect.size.height) animated:YES];
-    }
+    if (!CGRectContainsPoint(aRect, activeField.frame.origin) ) {
+        [self.scrollView scrollRectToVisible:activeField.frame animated:YES];
 }
- 
+}
 // Called when the UIKeyboardWillHideNotification is sent
 - (void)keyboardWillBeHidden:(NSNotification*)aNotification
 {
@@ -165,10 +185,9 @@
     self.scrollView.contentOffset = CGPointMake(0, textField.frame.origin.y);
 }
 
-- (void)textFieldDidEndEditing:(UITextField *)textField
-{
-    self.activeField = nil;
-}
+
+
+
 
 
 

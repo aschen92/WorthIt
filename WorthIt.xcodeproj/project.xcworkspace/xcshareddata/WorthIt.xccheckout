@@ -10,29 +10,29 @@
 	<string>WorthIt</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>12FABE93-2079-4B1C-9D27-3F1671C644CD</key>
+		<key>F2A840D9496830946AC6E16F1143ADEC590880CB</key>
 		<string>https://github.com/aschen92/WorthIt.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>WorthIt.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>12FABE93-2079-4B1C-9D27-3F1671C644CD</key>
+		<key>F2A840D9496830946AC6E16F1143ADEC590880CB</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/aschen92/WorthIt.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>12FABE93-2079-4B1C-9D27-3F1671C644CD</string>
+	<string>F2A840D9496830946AC6E16F1143ADEC590880CB</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>12FABE93-2079-4B1C-9D27-3F1671C644CD</string>
+			<string>F2A840D9496830946AC6E16F1143ADEC590880CB</string>
 			<key>IDESourceControlWCCName</key>
 			<string>WorthIt</string>
 		</dict>
