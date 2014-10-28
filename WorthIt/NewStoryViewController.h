@@ -19,7 +19,7 @@
 @property (weak, nonatomic) IBOutlet UISwitch *shouldShowProfilePicture;
 @property (weak, nonatomic) IBOutlet UITextView *storyTextField;
 
-
+@property (weak, nonatomic) UITextField *activeField;
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 

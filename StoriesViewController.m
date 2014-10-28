@@ -43,6 +43,7 @@
         if (!FBSession.activeSession.isOpen) {
             nav.rightBarButtonItem.enabled = NO;
         }
+        
     }
     
     return self;

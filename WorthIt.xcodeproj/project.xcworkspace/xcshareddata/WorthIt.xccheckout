@@ -14,7 +14,7 @@
 		<string>https://github.com/aschen92/WorthIt.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>WorthIt.xcodeproj/project.xcworkspace</string>
+	<string>WorthIt.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>F2A840D9496830946AC6E16F1143ADEC590880CB</key>

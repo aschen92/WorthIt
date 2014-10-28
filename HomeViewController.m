@@ -54,7 +54,8 @@
     [FBRequestConnection startForMeWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
         if (!error) {
             // Success! Include your code to handle the results here
-      //      NSLog(@"user info: %@", result);
+            NSLog(@"user info: %@", result);
+            
         } else {
             // An error occurred, we need to handle the error
             // See: https://developers.facebook.com/docs/ios/errors
@@ -62,8 +63,9 @@
     }];
     
     self.userID = user.id;
-    
+
     self.profilePicture.profileID = self.userID;
+    NSLog(@"KITTY: %@", user.first_name);
 }
 
 - (void)loginViewShowingLoggedInUser:(FBLoginView *)loginView
